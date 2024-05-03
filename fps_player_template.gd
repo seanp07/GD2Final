@@ -22,13 +22,13 @@ const BOB_AMP = 0.08
 var t_bob = 0.0
 
 
-var damage_shader = preload("res://assets/shaders/take_damage.tres")
+var damage_shader = preload("res://take_damage.tres")
 @onready var head = $Head
 
 var blaster 
 var muzzle
 var old_blaster_y
-var dart_scene = preload("res://assets/maps/fps_dart.tscn")
+var dart_scene = preload("res://fps_dart.tscn")
 
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.03
@@ -49,9 +49,9 @@ var TOTAL_AMMO = 300
 var is_reloading = false
 
 @onready var audio_player = $AudioStreamPlayer3D
-var reload_sound = preload("res://assets/sounds/recharge.mp3")
-var hit_sound = preload("res://assets/sounds/hitHurt.wav")
-var dink_sound = preload("res://assets/sounds/hitHead.wav")
+var reload_sound = preload("res://recharge.mp3")
+var hit_sound = preload("res://hitHurt.wav")
+var dink_sound = preload("res://hitHead.wav")
 
 var unaim_pos = Vector3(0.219, -0.27, -0.421)
 var aim_pos = Vector3(0, -0.14, -0.511)

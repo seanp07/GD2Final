@@ -14,15 +14,15 @@ var MAX_HEALTH = 20
 var HEALTH = MAX_HEALTH
 
 @onready var muzzle = $blaster/muzzle
-var dart_scene = preload("res://assets/maps/fps_dart.tscn")
+var dart_scene = preload("res://fps_dart.tscn")
 var spray_lock = 0.0
 var spray_amount = 0.08
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 1.5
 
 @onready var audio_player = $AudioStreamPlayer3D
-var hit_sound = preload("res://assets/sounds/hitHurt.wav")
-var dink_sound = preload("res://assets/sounds/hitHead.wav")
+var hit_sound = preload("res://hitHurt.wav")
+var dink_sound = preload("res://hitHead.wav")
 
 func is_player_in_sight(player):
 	var from_pos = self.global_transform.origin
@@ -54,8 +54,6 @@ func _physics_process(delta):
 	if nav_agent.target_position == Vector3.ZERO:
 		velocity = Vector3.ZERO
 	
-	$lblHealth.text = str(int(HEALTH)) + "/" + str(MAX_HEALTH)
-	$lblHealth.rotation.y = dir.x
 	
 	if dir != Vector3.ZERO:
 		var angle_to_dir = atan2(dir.x, dir.z)
