@@ -1,9 +1,9 @@
 extends CharacterBody3D
 
 
-var SPEED = 7.0
+var SPEED = 8.0
 var NORMAL_SPEED = SPEED
-var WALK_SPEED = 4.0
+var WALK_SPEED = 5.0
 var JUMP_VELOCITY = 7.0
 
 var MAX_HEALTH = 100

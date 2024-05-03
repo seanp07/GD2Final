@@ -29,7 +29,7 @@ shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
-size = Vector3(13.8967, 0.002, 15.2793)
+size = Vector3(180.465, 0.002, 221.632)
 material = SubResource("StandardMaterial3D_c4njn")
 
 [node name="fps_player" parent="." instance=ExtResource("1_3q2cf")]
