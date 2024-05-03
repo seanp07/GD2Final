@@ -8,7 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * DROP
 var spawn_origin: Vector3
 
 @onready var audio_player = $AudioStreamPlayer3D
-var fire_sound = preload("res://fire.wav")
+var fire_sound = preload("res://sounds/fire.wav")
 
 func _ready():
 	$Timer.start()
