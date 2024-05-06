@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-var SPEED = 8.0
+var SPEED = 15.0
 var NORMAL_SPEED = SPEED
 var JUMP_VELOCITY = 7.0
 
@@ -16,8 +16,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 1.5
 
 @onready var camera = $Head/Camera3D
 var CAM_SENSITIVITY = 0.02
-const BOB_FREQ = 2.4
-const BOB_AMP = 0.08
+const BOB_FREQ = 1.6
+const BOB_AMP = 0.1
 var t_bob = 0.0
 
 
