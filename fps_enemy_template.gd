@@ -21,8 +21,8 @@ var spray_amount = 0.08
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 1.5
 
 @onready var audio_player = $AudioStreamPlayer3D
-var hit_sound = preload("res://hitHurt.wav")
-var dink_sound = preload("res://hitHead.wav")
+var hit_sound = preload("res://sounds/hitHurt.wav")
+var dink_sound = preload("res://sounds/hitHead.wav")
 
 func is_player_in_sight(player):
 	var from_pos = self.global_transform.origin

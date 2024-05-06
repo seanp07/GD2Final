@@ -45,9 +45,9 @@ var TOTAL_AMMO = 300
 var is_reloading = false
 
 @onready var audio_player = $AudioStreamPlayer3D
-var reload_sound = preload("res://recharge.mp3")
-var hit_sound = preload("res://hitHurt.wav")
-var dink_sound = preload("res://hitHead.wav")
+var reload_sound = preload("res://sounds/recharge.mp3")
+var hit_sound = preload("res://sounds/hitHurt.wav")
+var dink_sound = preload("res://sounds/hitHead.wav")
 
 var unaim_pos = Vector3(0.219, -0.27, -0.421)
 var aim_pos = Vector3(0, -0.14, -0.511)
