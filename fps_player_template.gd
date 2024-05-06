@@ -213,8 +213,8 @@ func headbob(time):
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	blaster = $Head/Camera3D/blaster 
-	muzzle = $Head/Camera3D/blaster/muzzle 
+	blaster = $Head/Camera3D/weapon_model_test
+	muzzle = $Head/Camera3D/weapon_model_test/CSGCylinder3D
 	old_blaster_y = blaster.position.y
 	
 
