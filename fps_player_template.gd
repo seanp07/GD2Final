@@ -3,7 +3,6 @@ extends CharacterBody3D
 
 var SPEED = 8.0
 var NORMAL_SPEED = SPEED
-var WALK_SPEED = 5.0
 var JUMP_VELOCITY = 7.0
 
 var MAX_HEALTH = 100
@@ -32,16 +31,13 @@ var dart_scene = preload("res://fps_dart.tscn")
 
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.03
-var CROUNCH_SPRAY_AMOUNT = 0.01
 var SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
 var FIRING_DELAY = 0.075
 var ATTACK = 5.0
 var NORMAL_HEIGHT = 2.0
-var CROUCH_HEIGHT = 1.25
 var NORMAL_COLLISION_RAD = 0.5
 var CROUCH_COLLISION_RAD = 0.8
 var NORMAL_HEAD = 0.8
-var CROUCH_HEAD = 0.4
 
 var CLIP_SIZE = 30
 var AMMO = CLIP_SIZE
@@ -86,9 +82,8 @@ func _physics_process(delta):
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY if not Input.is_action_pressed("crouch") else JUMP_VELOCITY * 1.05
-	if Input.is_action_pressed ("walk") or Input.is_action_pressed("crouch"):
-		SPEED = WALK_SPEED
+		velocity.y = JUMP_VELOCITY * 1.05
+	
 	else:
 		SPEED = NORMAL_SPEED
 	if damage_lock != 0.0:
@@ -147,18 +142,6 @@ func _physics_process(delta):
 	var cur_quat = Quaternion.from_euler(degrees_to_radians(blaster.rotation_degrees))
 	blaster.rotation_degrees = radians_to_degrees(cur_quat.slerp(target_quat, delta * 10).get_euler())
 	
-	if Input.is_action_pressed("crouch"):
-		$CollisionShape3D.shape.height = CROUCH_HEIGHT + 0.05
-		$CollisionShape3D.shape.radius = CROUCH_COLLISION_RAD
-		$MeshInstance3D.scale.y = CROUCH_HEIGHT/NORMAL_HEIGHT
-		$Head.position.y = lerp($Head.position.y, CROUCH_HEAD, delta*5.0)
-		SPRAY_AMOUNT = CROUNCH_SPRAY_AMOUNT
-	if Input.is_action_just_released("crouch"):
-		$CollisionShape3D.shape.height = NORMAL_HEIGHT
-		$CollisionShape3D.shape.radius = NORMAL_COLLISION_RAD
-		$MeshInstance3D.scale.y = 1.0
-		$Head.position.y = lerp($Head.position.y, NORMAL_HEAD, delta*5.0)
-		SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
 	
 	move_and_slide()
 	
