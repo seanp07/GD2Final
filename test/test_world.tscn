@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://dixjll0inmn2j"]
+[gd_scene load_steps=5 format=3 uid="uid://dixjll0inmn2j"]
 
-[ext_resource type="PackedScene" uid="uid://cqs2u01lhbylt" path="res://test/test_player.tscn" id="1_g251l"]
 [ext_resource type="PackedScene" uid="uid://djcvpksnr5iut" path="res://fps_enemy_template.tscn" id="2_3qw5u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_frwaf"]
@@ -27,10 +26,7 @@ shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
-size = Vector3(36.8266, 0.493836, 42.6002)
-
-[node name="fps_player" parent="." instance=ExtResource("1_g251l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.476687, 1.18024, 0.280778)
+size = Vector3(215.146, 0.493836, 294.433)
 
 [node name="fps_enemy" parent="." instance=ExtResource("2_3qw5u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5224, 1.2043, -14.7988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5224, 1.2043, -119.66)
