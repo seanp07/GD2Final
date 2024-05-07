@@ -33,7 +33,7 @@ var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.02
 var SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
 var FIRING_DELAY = 0.2
-var ATTACK = 6.0
+var ATTACK = 5.5
 var NORMAL_HEIGHT = 2.0
 var NORMAL_COLLISION_RAD = 0.5
 var CROUCH_COLLISION_RAD = 0.8
@@ -156,10 +156,12 @@ func _physics_process(delta):
 		await get_tree().create_timer(0.25).timeout
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		OS.alert("You win!")
-		if "fps_world2" in get_tree().current_scene.name:
-			get_tree().change_scene_to_file("res://fps_world3.tscn")
-		else:
-			get_tree().change_scene_to_file("res://fps_world2.tscn")
+		get_tree().quit()
+		
+		# if "fps_world2" in get_tree().current_scene.name:
+			# get_tree().change_scene_to_file("res://fps_world3.tscn")
+		# else:
+			# get_tree().change_scene_to_file("res://fps_world2.tscn")
 	if int(HEALTH) <= 0:
 		HEALTH = 0
 		await get_tree().create_timer(0.25).timeout
@@ -213,8 +215,8 @@ func headbob(time):
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	blaster = $Head/Camera3D/weapon_model_test
-	muzzle = $Head/Camera3D/weapon_model_test/CSGCylinder3D
+	blaster = $Head/Camera3D/test_weapon2
+	muzzle = $Head/Camera3D/test_weapon2/CSGCylinder3D2
 	old_blaster_y = blaster.position.y
 	
 
