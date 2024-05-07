@@ -30,10 +30,10 @@ var old_blaster_y
 var dart_scene = preload("res://fps_dart.tscn")
 
 var spray_lock = 0.0
-var NORMAL_SPRAY_AMOUNT = 0.03
+var NORMAL_SPRAY_AMOUNT = 0.02
 var SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
-var FIRING_DELAY = 0.075
-var ATTACK = 5.0
+var FIRING_DELAY = 0.2
+var ATTACK = 6.0
 var NORMAL_HEIGHT = 2.0
 var NORMAL_COLLISION_RAD = 0.5
 var CROUCH_COLLISION_RAD = 0.8
@@ -213,8 +213,8 @@ func headbob(time):
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	blaster = $Head/Camera3D/blaster
-	muzzle = $Head/Camera3D/blaster/muzzle
+	blaster = $Head/Camera3D/weapon_model_test
+	muzzle = $Head/Camera3D/weapon_model_test/CSGCylinder3D
 	old_blaster_y = blaster.position.y
 	
 
