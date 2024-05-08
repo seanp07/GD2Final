@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://tmk0fp5xst7m"]
+[gd_scene load_steps=11 format=3 uid="uid://tmk0fp5xst7m"]
 
+[ext_resource type="PackedScene" uid="uid://bihvkmby3h3g2" path="res://flag.tscn" id="1_nf6bf"]
 [ext_resource type="PackedScene" uid="uid://cmnd61gdptmql" path="res://fps_playerbasic.tscn" id="1_xrrn0"]
 [ext_resource type="PackedScene" uid="uid://djcvpksnr5iut" path="res://fps_enemy_template.tscn" id="2_vemrg"]
 
@@ -15,10 +16,13 @@ background_mode = 2
 sky = SubResource("Sky_hd7fk")
 tonemap_mode = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mrwe"]
+albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tiauy"]
 albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mrwe"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgpqp"]
 albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u25al"]
@@ -33,12 +37,6 @@ environment = SubResource("Environment_s7ojx")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
-
-[node name="barricade" type="CSGBox3D" parent="."]
-transform = Transform3D(4.37114e-08, 4.37114e-08, 1, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 1.07927, 0.428893, -12.0505)
-use_collision = true
-size = Vector3(1.9498, 1.13472, 0.474416)
-material = SubResource("StandardMaterial3D_tiauy")
 
 [node name="room2" type="CSGCombiner3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.95365, 1.62518, -12.6969)
@@ -86,6 +84,59 @@ use_collision = true
 size = Vector3(13.4959, 0.238, 8.00181)
 material = SubResource("StandardMaterial3D_4mrwe")
 
+[node name="barricade" type="CSGBox3D" parent="room2"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -1.19629, -4.03292, 0.6464)
+use_collision = true
+size = Vector3(1.9498, 1.13472, 0.474416)
+material = SubResource("StandardMaterial3D_tiauy")
+
+[node name="flag" parent="." instance=ExtResource("1_nf6bf")]
+
+[node name="room3" type="CSGCombiner3D" parent="."]
+transform = Transform3D(7.54979e-08, -1.94707e-07, -1, -4.37114e-08, 1, -1.94707e-07, 1, 4.37114e-08, 7.54979e-08, 41.5898, -0.219254, -15.1363)
+use_collision = true
+
+[node name="fwc5" type="CSGBox3D" parent="room3"]
+use_collision = true
+size = Vector3(11.7, 0.238, 11.7)
+material = SubResource("StandardMaterial3D_wgpqp")
+
+[node name="fwc8" type="CSGBox3D" parent="room3"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -6.02698, 1.82687, 0.0798998)
+use_collision = true
+size = Vector3(3.9, 0.238, 12)
+material = SubResource("StandardMaterial3D_wgpqp")
+
+[node name="fwc9" type="CSGBox3D" parent="room3"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.04447, 1.82687, 0.0798998)
+use_collision = true
+size = Vector3(3.9, 0.238, 12)
+material = SubResource("StandardMaterial3D_wgpqp")
+
+[node name="fwc10" type="CSGBox3D" parent="room3"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.037945, 1.82687, -6.0546)
+use_collision = true
+size = Vector3(3.9, 0.238, 12)
+material = SubResource("StandardMaterial3D_wgpqp")
+
+[node name="fwc6" type="CSGBox3D" parent="room3"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -3.94246, 1.84166, 6.01074)
+use_collision = true
+size = Vector3(3.9, 0.238, 3.94313)
+material = SubResource("StandardMaterial3D_wgpqp")
+
+[node name="fwc7" type="CSGBox3D" parent="room3"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 3.9474, 1.84166, 6.01074)
+use_collision = true
+size = Vector3(3.9, 0.238, 3.94313)
+material = SubResource("StandardMaterial3D_wgpqp")
+
+[node name="fwc11" type="CSGBox3D" parent="room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65045, 0)
+use_collision = true
+size = Vector3(11.7, 0.238, 11.7)
+material = SubResource("StandardMaterial3D_wgpqp")
+
 [node name="hallway1" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914918, -0.22461, -2.86668)
 use_collision = true
@@ -119,14 +170,8 @@ use_collision = true
 size = Vector3(4.31272, 3.74454, 0.342393)
 material = SubResource("StandardMaterial3D_u25al")
 
-[node name="fps_player" parent="." instance=ExtResource("1_xrrn0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.983784, 0.922837, 1.97138)
-
-[node name="fps_enemy" parent="." instance=ExtResource("2_vemrg")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.42935, 0.88586, -11.0242)
-
 [node name="hallway2" type="CSGCombiner3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.604, -0.225, -15.174)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.4682, -0.225, -15.174)
 use_collision = true
 
 [node name="fwc" type="CSGBox3D" parent="hallway2"]
@@ -151,3 +196,54 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.049,
 use_collision = true
 size = Vector3(3.9, 0.238, 13.009)
 material = SubResource("StandardMaterial3D_4mrwe")
+
+[node name="barricade2" type="CSGBox3D" parent="hallway2"]
+transform = Transform3D(-1, 4.37114e-08, 0, -4.37114e-08, -1, 4.37114e-08, 0, 4.37114e-08, 1, -1.01113, 0.653893, -0.475242)
+use_collision = true
+size = Vector3(1.9498, 1.13472, 0.474416)
+material = SubResource("StandardMaterial3D_tiauy")
+
+[node name="hallway3" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.2465, -0.225, -15.174)
+use_collision = true
+
+[node name="fwc" type="CSGBox3D" parent="hallway3"]
+use_collision = true
+size = Vector3(3.9, 0.238, 13.009)
+material = SubResource("StandardMaterial3D_4mrwe")
+
+[node name="fwc4" type="CSGBox3D" parent="hallway3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 3.65742, -0.671144)
+use_collision = true
+size = Vector3(3.9, 0.238, 14.763)
+material = SubResource("StandardMaterial3D_4mrwe")
+
+[node name="fwc2" type="CSGBox3D" parent="hallway3"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.03831, 1.84166, 0)
+use_collision = true
+size = Vector3(3.9, 0.238, 13.009)
+material = SubResource("StandardMaterial3D_4mrwe")
+
+[node name="fwc3" type="CSGBox3D" parent="hallway3"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.049, 1.84166, 0)
+use_collision = true
+size = Vector3(3.9, 0.238, 13.009)
+material = SubResource("StandardMaterial3D_4mrwe")
+
+[node name="barricade3" type="CSGBox3D" parent="hallway3"]
+transform = Transform3D(-1, 4.37114e-08, 0, -4.37114e-08, -1, 4.37114e-08, 0, 4.37114e-08, 1, 1.00038, 0.653893, 6.25469)
+use_collision = true
+size = Vector3(1.9498, 1.13472, 0.474416)
+material = SubResource("StandardMaterial3D_tiauy")
+
+[node name="fps_player" parent="." instance=ExtResource("1_xrrn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.983784, 0.922837, 1.97138)
+
+[node name="fps_enemy" parent="." instance=ExtResource("2_vemrg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.42935, 0.88586, -11.0242)
+
+[node name="fps_enemy2" parent="." instance=ExtResource("2_vemrg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.5464, 0.88586, -13.998)
+
+[node name="fps_enemy3" parent="." instance=ExtResource("2_vemrg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36.7616, 0.88586, -15.7967)
