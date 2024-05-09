@@ -1,22 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bihvkmby3h3g2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yvgc"]
-albedo_color = Color(0, 0.278431, 0.670588, 1)
+[ext_resource type="Script" path="res://flag.gd" id="1_myrbw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojili"]
 transparency = 1
 depth_draw_mode = 1
 albedo_color = Color(0.972549, 0.972549, 0.729412, 0.67451)
 
-[node name="flag" type="CSGCombiner3D"]
+[node name="flag" type="Node3D"]
 transform = Transform3D(7.54979e-08, -1.94707e-07, -1, -4.37114e-08, 1, -1.94707e-07, 1, 4.37114e-08, 7.54979e-08, 41.5898, 1.66598, -15.1363)
-
-[node name="base" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 3.30012e-15, 0, 3.30012e-15, 1, 0, -1.88524, 0)
-radius = 1.67
-height = 0.361656
-sides = 30
-material = SubResource("StandardMaterial3D_2yvgc")
+script = ExtResource("1_myrbw")
 
 [node name="illum" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 3.30012e-15, 0, 3.30012e-15, 1, 0, 0, 0)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfnvq6hle7q4s"]
+
+[ext_resource type="Script" path="res://finish.gd" id="1_qsd1f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u25al"]
+albedo_color = Color(0.972549, 0.972549, 0.729412, 1)
+emission = Color(0.972549, 0.972549, 0.729412, 1)
+
+[node name="finish" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111696, 1.74138, 6.52234)
+size = Vector3(4.31272, 3.74454, 0.342393)
+material = SubResource("StandardMaterial3D_u25al")
+script = ExtResource("1_qsd1f")

@@ -5,6 +5,8 @@ var SPEED = 15.0
 var NORMAL_SPEED = SPEED
 var JUMP_VELOCITY = 7.0
 
+var held = false
+
 var MAX_HEALTH = 100
 var HEALTH = MAX_HEALTH
 var damage_lock = 0.0  # Prevent infinite damage
@@ -152,12 +154,7 @@ func _physics_process(delta):
 		OS.alert("You Died!")
 		get_tree().reload_current_scene()
 	
-	if int(HEALTH) <= 0:
-		HEALTH = 0
-		await get_tree().create_timer(0.25).timeout
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		OS.alert("You died!")
-		get_tree().reload_current_scene()
+	
 	
 	# Right Joystick
 	var joystick_index = 0
