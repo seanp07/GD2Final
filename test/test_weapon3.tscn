@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwum3r0utuv05"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rseij"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gni18"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsb8q"]
+albedo_color = Color(0.282353, 0.282353, 0.282353, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qegmc"]
+albedo_color = Color(0.290196, 0.290196, 0.290196, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcdxf"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fxta"]
+albedo_color = Color(1, 0.384314, 0, 1)
+
+[node name="test_weapon3" type="CSGBox3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+size = Vector3(0.01, 0.011947, 0.0205624)
+material = SubResource("StandardMaterial3D_rseij")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, -0.010328, -0.0147796)
+size = Vector3(0.01, 0.023, 0.009)
+material = SubResource("StandardMaterial3D_gni18")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.00219185, 0.0338701)
+radius = 0.003
+height = 0.05
+material = SubResource("StandardMaterial3D_vsb8q")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.00290667, 0.0331303)
+radius = 0.003
+height = 0.05
+material = SubResource("StandardMaterial3D_qegmc")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.00435575, 0.0364959)
+radius = 0.003
+height = 0.02
+material = SubResource("StandardMaterial3D_kcdxf")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.00164616, 0.0596732)
+radius = 0.002
+height = 0.002
+material = SubResource("StandardMaterial3D_6fxta")

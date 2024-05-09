@@ -13,6 +13,7 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(1, 0.356863, 0, 1)
 
 [node name="test_weapon2" type="CSGBox3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 size = Vector3(0.01, 0.023, 0.009)
 material = SubResource("StandardMaterial3D_3hcbg")
 
