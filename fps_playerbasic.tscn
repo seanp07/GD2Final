@@ -27,7 +27,7 @@ font_color = Color(0.533333, 0.0313726, 0.0313726, 1)
 font_size = 24
 font_color = Color(0.54902, 0.482353, 0.168627, 1)
 
-[node name="fps_player" type="CharacterBody3D" groups=["Player"]]
+[node name="fps_player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_d3571")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
