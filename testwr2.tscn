@@ -91,6 +91,7 @@ material = SubResource("StandardMaterial3D_tiauy")
 
 [node name="finish" parent="." instance=ExtResource("2_y0pj8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803222, 1.51677, 3.65566)
+size = Vector3(4.31272, 3.74454, 0.894136)
 
 [node name="room3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(7.54979e-08, -1.94707e-07, -1, -4.37114e-08, 1, -1.94707e-07, 1, 4.37114e-08, 7.54979e-08, 41.5898, -0.219254, -15.1363)

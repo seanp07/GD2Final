@@ -5,7 +5,7 @@ var SPEED = 15.0
 var NORMAL_SPEED = SPEED
 var JUMP_VELOCITY = 7.0
 
-var held = false
+
 
 var MAX_HEALTH = 100
 var HEALTH = MAX_HEALTH

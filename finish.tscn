@@ -6,8 +6,7 @@
 albedo_color = Color(0.972549, 0.972549, 0.729412, 1)
 emission = Color(0.972549, 0.972549, 0.729412, 1)
 
-[node name="finish" type="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111696, 1.74138, 6.52234)
+[node name="finish" type="CSGBox3D" groups=["finish"]]
 size = Vector3(4.31272, 3.74454, 0.342393)
 material = SubResource("StandardMaterial3D_u25al")
 script = ExtResource("1_qsd1f")
