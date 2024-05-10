@@ -16,7 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 1.5
 
 @onready var camera = $Head/Camera3D
 var CAM_SENSITIVITY = 0.02
-const BOB_FREQ = 1.6
+const BOB_FREQ = 0
 const BOB_AMP = 0.1
 var t_bob = 0.0
 
@@ -30,18 +30,18 @@ var old_blaster_y
 var dart_scene = preload("res://fps_dart.tscn")
 
 var spray_lock = 0.0
-var NORMAL_SPRAY_AMOUNT = 0.2
+var NORMAL_SPRAY_AMOUNT = 0.4
 var SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
-var FIRING_DELAY = 0.2
-var ATTACK = 4
+var FIRING_DELAY = 0.1
+var ATTACK = 2
 var NORMAL_HEIGHT = 2.0
 var NORMAL_COLLISION_RAD = 0.5
 var CROUCH_COLLISION_RAD = 0.8
 var NORMAL_HEAD = 0.8
 
-var CLIP_SIZE = 16
+var CLIP_SIZE = 30
 var AMMO = CLIP_SIZE
-var TOTAL_AMMO = 150
+var TOTAL_AMMO = 200
 var is_reloading = false
 
 @onready var audio_player = $AudioStreamPlayer3D
@@ -49,10 +49,10 @@ var reload_sound = preload("res://sounds/recharge.mp3")
 var hit_sound = preload("res://sounds/hitHurt.wav")
 var dink_sound = preload("res://sounds/hitHead.wav")
 
-var unaim_pos = Vector3(0.219, -0.27, -0.421)
-var aim_pos = Vector3(0, -0.14, -0.511)
-var unaim_quat = euler_degrees_to_quat(Vector3(28.1, 31.7, 0))
-var aim_quat = euler_degrees_to_quat(Vector3(11.6, 0, 0))
+var unaim_pos = Vector3(0.319, -0.292, -0.753)
+var aim_pos = Vector3(0, -0.4, -0.4)
+var unaim_quat = euler_degrees_to_quat(Vector3(0, 90, 0))
+var aim_quat = euler_degrees_to_quat(Vector3(0, 90, 0))
 var target_pos = unaim_pos
 var target_quat = unaim_quat
 
@@ -201,7 +201,7 @@ func do_fire():
 		add_child(dart)
 		var spray = SPRAY_AMOUNT
 		if not is_on_floor():
-			spray *= randf_range(.5, 5)
+			spray *= randf_range(0.5, 5)
 		dart.do_fire(camera, muzzle, spray, ATTACK)
 		AMMO -= 1
 		spray_lock = FIRING_DELAY
@@ -215,8 +215,8 @@ func headbob(time):
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	blaster = $Head/Camera3D/weapon_model_test
-	muzzle = $Head/Camera3D/weapon_model_test/CSGCylinder3D
+	blaster = $Head/Camera3D/test_weapon2
+	muzzle = $Head/Camera3D/test_weapon2/CSGCylinder3D2
 	old_blaster_y = blaster.position.y
 
 func _unhandled_input(event):
@@ -224,3 +224,4 @@ func _unhandled_input(event):
 		self.rotate_y(-event.relative.x * (CAM_SENSITIVITY / 10.0))
 		camera.rotate_x(-event.relative.y * (CAM_SENSITIVITY / 10.0))
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-75), deg_to_rad(75))
+
