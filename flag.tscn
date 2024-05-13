@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bihvkmby3h3g2"]
+[gd_scene load_steps=4 format=3 uid="uid://bihvkmby3h3g2"]
 
 [ext_resource type="Script" path="res://flag.gd" id="1_myrbw"]
 [ext_resource type="Material" uid="uid://djkly8h8mny2m" path="res://flag.tres" id="1_pvet0"]
 
-[node name="flag" type="CSGCylinder3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kegn4"]
+height = 3.411
+radius = 1.67
+
+[node name="flag" type="Area3D"]
 transform = Transform3D(7.54979e-08, -1.94707e-07, -1, -4.37114e-08, 1, -1.94707e-07, 1, 4.37114e-08, 7.54979e-08, 41.5898, 1.66598, -15.1363)
+script = ExtResource("1_myrbw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_kegn4")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 radius = 1.67
 height = 3.411
 sides = 30
 material = ExtResource("1_pvet0")
-script = ExtResource("1_myrbw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
