@@ -90,8 +90,7 @@ material = SubResource("StandardMaterial3D_tiauy")
 [node name="flag" parent="." instance=ExtResource("1_nf6bf")]
 
 [node name="finish" parent="." instance=ExtResource("2_y0pj8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803222, 1.51677, 3.65566)
-size = Vector3(4.31272, 3.74454, 0.894136)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803222, 1.51677, 3.27292)
 
 [node name="room3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(7.54979e-08, -1.94707e-07, -1, -4.37114e-08, 1, -1.94707e-07, 1, 4.37114e-08, 7.54979e-08, 41.5898, -0.219254, -15.1363)
@@ -144,23 +143,29 @@ use_collision = true
 
 [node name="fwc" type="CSGBox3D" parent="hallway1"]
 use_collision = true
-size = Vector3(3.9, 0.238, 13.009)
+size = Vector3(3.9, 0.238, 14.8712)
 material = SubResource("StandardMaterial3D_4mrwe")
 
 [node name="fwc4" type="CSGBox3D" parent="hallway1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65742, 0)
 use_collision = true
-size = Vector3(3.9, 0.238, 13.009)
+size = Vector3(3.9, 0.238, 13.5035)
 material = SubResource("StandardMaterial3D_4mrwe")
 
 [node name="fwc2" type="CSGBox3D" parent="hallway1"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.03831, 1.84166, 0)
 use_collision = true
-size = Vector3(3.9, 0.238, 13.009)
+size = Vector3(3.9, 0.238, 14.3194)
 material = SubResource("StandardMaterial3D_4mrwe")
 
 [node name="fwc3" type="CSGBox3D" parent="hallway1"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.049, 1.84166, 0)
+use_collision = true
+size = Vector3(3.9, 0.238, 14.0668)
+material = SubResource("StandardMaterial3D_4mrwe")
+
+[node name="fwc5" type="CSGBox3D" parent="hallway1"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 2.049, 1.84166, 6.72419)
 use_collision = true
 size = Vector3(3.9, 0.238, 13.009)
 material = SubResource("StandardMaterial3D_4mrwe")
@@ -242,3 +247,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.546
 
 [node name="fps_enemy3" parent="." instance=ExtResource("2_vemrg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36.7616, 0.88586, -15.7967)
+
+[node name="Timer" type="Timer" parent="." groups=["timer"]]
+process_callback = 0
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="fps_player" method="_on_timer_timeout"]

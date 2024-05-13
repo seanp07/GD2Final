@@ -144,7 +144,6 @@ func _physics_process(delta):
 	var cur_quat = Quaternion.from_euler(degrees_to_radians(blaster.rotation_degrees))
 	blaster.rotation_degrees = radians_to_degrees(cur_quat.slerp(target_quat, delta * 10).get_euler())
 	
-	
 	move_and_slide()
 	
 	if int(HEALTH) <= 0:
@@ -213,3 +212,9 @@ func _unhandled_input(event):
 		self.rotate_y(-event.relative.x * (CAM_SENSITIVITY / 10.0))
 		camera.rotate_x(-event.relative.y * (CAM_SENSITIVITY / 10.0))
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-75), deg_to_rad(75))
+
+
+
+func _on_timer_timeout():
+	OS.alert("You ran out of time!")
+	get_tree().reload_current_scene()
