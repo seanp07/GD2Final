@@ -1,32 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://boejnosq6ixyi"]
+[gd_scene load_steps=8 format=3 uid="uid://dpgi50smrwg0h"]
 
-[ext_resource type="PackedScene" uid="uid://cdvgyirc37x6g" path="res://test/test_weapon2.tscn" id="1_o4itk"]
-[ext_resource type="Script" path="res://test_player3.gd" id="1_o20k2"]
+[ext_resource type="PackedScene" uid="uid://cvalhlsa1snxi" path="res://test/test_rpg.tscn" id="1_bvgt4"]
+[ext_resource type="Script" path="res://test_rpg_player.gd" id="1_clety"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_itk8h"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5xokt"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vyb6q"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qa4wv"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_lkiho"]
+[sub_resource type="LabelSettings" id="LabelSettings_7kfdd"]
 font_size = 48
 font_color = Color(0.662745, 0.662745, 0.662745, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_n06ry"]
+[sub_resource type="LabelSettings" id="LabelSettings_jhifg"]
 font_size = 24
 font_color = Color(0.533333, 0.0313726, 0.0313726, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_t2uuf"]
+[sub_resource type="LabelSettings" id="LabelSettings_oma26"]
 font_size = 24
 font_color = Color(0.54902, 0.482353, 0.168627, 1)
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
-script = ExtResource("1_o20k2")
+[node name="test_rpg_player" type="CharacterBody3D"]
+script = ExtResource("1_clety")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_itk8h")
+mesh = SubResource("CapsuleMesh_5xokt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_vyb6q")
+shape = SubResource("CapsuleShape3D_qa4wv")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
@@ -35,8 +35,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 current = true
 near = 0.25
 
-[node name="test_weapon2" parent="Head/Camera3D" instance=ExtResource("1_o4itk")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 0.318886, -0.291685, -0.752796)
+[node name="test_rpg" parent="Head/Camera3D" instance=ExtResource("1_bvgt4")]
+transform = Transform3D(-12, 0, -1.04907e-06, 0, 12, 0, 1.04907e-06, 0, -12, 0.0462227, -0.526126, -0.960287)
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -65,7 +65,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "+"
-label_settings = SubResource("LabelSettings_lkiho")
+label_settings = SubResource("LabelSettings_7kfdd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -79,7 +79,7 @@ offset_right = 146.0
 grow_vertical = 0
 text = "100/100
 "
-label_settings = SubResource("LabelSettings_n06ry")
+label_settings = SubResource("LabelSettings_jhifg")
 
 [node name="lblammo" type="Label" parent="HUD"]
 layout_mode = 1
@@ -94,6 +94,6 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "0/0
 "
-label_settings = SubResource("LabelSettings_t2uuf")
+label_settings = SubResource("LabelSettings_oma26")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

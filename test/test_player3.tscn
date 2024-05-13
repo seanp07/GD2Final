@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://bt0vx4hud68cf"]
+
+[ext_resource type="Script" path="res://test/test_player3.gd" id="1_80vno"]
+[ext_resource type="PackedScene" uid="uid://cdvgyirc37x6g" path="res://test/test_weapon2.tscn" id="2_i0uxj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_itk8h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vyb6q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lkiho"]
+font_size = 48
+font_color = Color(0.662745, 0.662745, 0.662745, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n06ry"]
+font_size = 24
+font_color = Color(0.533333, 0.0313726, 0.0313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t2uuf"]
+font_size = 24
+font_color = Color(0.54902, 0.482353, 0.168627, 1)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_80vno")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_itk8h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vyb6q")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
+near = 0.25
+
+[node name="test_weapon2" parent="Head/Camera3D" instance=ExtResource("2_i0uxj")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 0.318886, -0.291685, -0.752796)
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="overlay" type="ColorRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.533333, 0.0313726, 0.0313726, 0)
+
+[node name="crosshair" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+label_settings = SubResource("LabelSettings_lkiho")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblhealth" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+offset_right = 146.0
+grow_vertical = 0
+text = "100/100
+"
+label_settings = SubResource("LabelSettings_n06ry")
+
+[node name="lblammo" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "0/0
+"
+label_settings = SubResource("LabelSettings_t2uuf")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
