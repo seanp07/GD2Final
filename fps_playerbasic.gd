@@ -58,6 +58,9 @@ var aim_quat = euler_degrees_to_quat(Vector3(11.6, 0, 0))
 var target_pos = unaim_pos
 var target_quat = unaim_quat
 
+var timer = Timer
+var time = 16
+
 func degrees_to_radians(degrees: Vector3) -> Vector3:
 	return Vector3(
 		deg_to_rad(degrees.x),
@@ -81,7 +84,9 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
+	
+	$HUD/time.text =  str(int(time))
+	time = max(time-delta, 0.0)
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY * 1.05
@@ -143,6 +148,8 @@ func _physics_process(delta):
 	blaster.position = blaster.position.lerp(target_pos, delta * 10)
 	var cur_quat = Quaternion.from_euler(degrees_to_radians(blaster.rotation_degrees))
 	blaster.rotation_degrees = radians_to_degrees(cur_quat.slerp(target_quat, delta * 10).get_euler())
+	
+	
 	
 	move_and_slide()
 	
@@ -212,9 +219,8 @@ func _unhandled_input(event):
 		self.rotate_y(-event.relative.x * (CAM_SENSITIVITY / 10.0))
 		camera.rotate_x(-event.relative.y * (CAM_SENSITIVITY / 10.0))
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-75), deg_to_rad(75))
-
-
-
+	
 func _on_timer_timeout():
-	OS.alert("You ran out of time!")
-	get_tree().reload_current_scene()
+		OS.alert("You ran out of time!")
+		get_tree().reload_current_scene()
+
