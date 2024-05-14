@@ -20,10 +20,10 @@ tonemap_mode = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mrwe"]
 albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tiauy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgpqp"]
 albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgpqp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tiauy"]
 albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [node name="Node3D" type="Node3D"]
@@ -70,9 +70,9 @@ size = Vector3(3.9, 0.238, 3.9)
 material = SubResource("StandardMaterial3D_4mrwe")
 
 [node name="fwc9" type="CSGBox3D" parent="room2"]
-transform = Transform3D(1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 0, -8.58, -0.43)
+transform = Transform3D(1, -4.37114e-08, 3.55271e-15, 0, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 4.76837e-07, -4.02632, -0.43)
 use_collision = true
-size = Vector3(3.9, 0.238, 9.573)
+size = Vector3(3.9, 0.474, 0.474)
 material = SubResource("StandardMaterial3D_4mrwe")
 
 [node name="fwc11" type="CSGBox3D" parent="room2"]
@@ -80,12 +80,6 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.8158
 use_collision = true
 size = Vector3(13.4959, 0.238, 8.00181)
 material = SubResource("StandardMaterial3D_4mrwe")
-
-[node name="barricade" type="CSGBox3D" parent="room2"]
-transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -1.19629, -4.03292, 0.6464)
-use_collision = true
-size = Vector3(1.9498, 1.13472, 0.474416)
-material = SubResource("StandardMaterial3D_tiauy")
 
 [node name="flag" parent="." instance=ExtResource("1_nf6bf")]
 
@@ -247,11 +241,3 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.546
 
 [node name="fps_enemy3" parent="." instance=ExtResource("2_vemrg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36.7616, 0.88586, -15.7967)
-
-[node name="Timer" type="Timer" parent="." groups=["timer"]]
-process_callback = 0
-wait_time = 10.0
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Timer" to="fps_player" method="_on_timer_timeout"]
