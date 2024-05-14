@@ -27,7 +27,7 @@ var damage_shader = preload("res://take_damage.tres")
 var blaster 
 var muzzle
 var old_blaster_y
-var rocket_scene = preload("res://rocket.tscn")
+var rocket_scene = preload("res://test/rocket.tscn")
 
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.001
@@ -51,8 +51,8 @@ var dink_sound = preload("res://sounds/hitHead.wav")
 
 var unaim_pos = Vector3(0.319, -0.292, -0.753)
 var aim_pos = Vector3(0, -0.4, -0.4)
-var unaim_quat = euler_degrees_to_quat(Vector3(0, 90, 0))
-var aim_quat = euler_degrees_to_quat(Vector3(0, 90, 0))
+var unaim_quat = euler_degrees_to_quat(Vector3(0, 180, 0))
+var aim_quat = euler_degrees_to_quat(Vector3(0, 180, 0))
 var target_pos = unaim_pos
 var target_quat = unaim_quat
 
@@ -216,7 +216,7 @@ func headbob(time):
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	blaster = $Head/Camera3D/test_rpg
-	muzzle = $Head/Camera3D/test_rpg/rocket
+	muzzle = $Head/Camera3D/test_rpg/CSGCylinder3D2
 	old_blaster_y = blaster.position.y
 
 func _unhandled_input(event):

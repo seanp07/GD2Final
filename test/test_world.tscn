@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dixjll0inmn2j"]
+[gd_scene load_steps=5 format=3 uid="uid://dixjll0inmn2j"]
 
 [ext_resource type="PackedScene" uid="uid://djcvpksnr5iut" path="res://fps_enemy_template.tscn" id="2_3qw5u"]
-[ext_resource type="PackedScene" uid="uid://dpgi50smrwg0h" path="res://test_rpg_player.tscn" id="2_lein8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_frwaf"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -31,6 +30,3 @@ size = Vector3(215.146, 0.493836, 294.433)
 
 [node name="fps_enemy" parent="." instance=ExtResource("2_3qw5u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5224, 1.2043, -119.66)
-
-[node name="test_rpg_player" parent="." instance=ExtResource("2_lein8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29688, 1.3272, -5.35488)
