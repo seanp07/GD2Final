@@ -56,6 +56,7 @@ var aim_quat = euler_degrees_to_quat(Vector3(11.6, 0, 0))
 var target_pos = unaim_pos
 var target_quat = unaim_quat
 
+
 func degrees_to_radians(degrees: Vector3) -> Vector3:
 	return Vector3(
 		deg_to_rad(degrees.x),

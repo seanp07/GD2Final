@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ku81muqiywrc"]
+[gd_scene load_steps=9 format=3 uid="uid://b0ah1we3o3lx8"]
 
-[ext_resource type="Script" path="res://test/test_player_2.gd" id="1_njucp"]
+[ext_resource type="Script" path="res://player versions/player_pistol.gd" id="1_hgbtq"]
 [ext_resource type="PackedScene" uid="uid://hs11pbxcqpyx" path="res://test/weapon_model_test.tscn" id="2_17vrm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5fm33"]
@@ -19,8 +19,11 @@ font_color = Color(0.533333, 0.0313726, 0.0313726, 1)
 font_size = 24
 font_color = Color(0.54902, 0.482353, 0.168627, 1)
 
-[node name="test_player2" type="CharacterBody3D"]
-script = ExtResource("1_njucp")
+[sub_resource type="LabelSettings" id="LabelSettings_xtvqp"]
+font_size = 20
+
+[node name="test_player2" type="CharacterBody3D" groups=["Player", "player"]]
+script = ExtResource("1_hgbtq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_5fm33")
@@ -96,4 +99,23 @@ text = "0/0
 "
 label_settings = SubResource("LabelSettings_0hj1v")
 
+[node name="time" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_right = 73.0
+offset_bottom = 37.0
+grow_horizontal = 2
+text = "Timer
+"
+label_settings = SubResource("LabelSettings_xtvqp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
