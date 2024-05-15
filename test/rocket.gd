@@ -42,3 +42,8 @@ func do_fire(camera, muzzle, spray_amount, attack=ATTACK):
 	var spray_dir = cam_forward + camera.global_transform.basis.x * rnd_x + camera.global_transform.basis.y * rnd_y
 	self.global_transform.origin = muzzle.global_transform.origin 
 	self.linear_velocity = -spray_dir.normalized() * SPEED
+
+
+func _on_body_entered(body):
+	if body.is_in_group("Enemy"):
+		pass

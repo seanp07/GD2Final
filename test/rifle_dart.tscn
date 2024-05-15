@@ -10,6 +10,7 @@ height = 0.095
 radius = 0.02
 
 [node name="rifle_dart" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_ox3vo")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]

@@ -32,14 +32,14 @@ var dart_scene = preload("res://fps_dart.tscn")
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.01
 var SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
-var FIRING_DELAY = 0.01
-var ATTACK = 6
+var FIRING_DELAY = 0.8
+var ATTACK = 5.5
 var NORMAL_HEIGHT = 2.0
 var NORMAL_COLLISION_RAD = 0.5
 var CROUCH_COLLISION_RAD = 0.8
 var NORMAL_HEAD = 0.8
 
-var CLIP_SIZE = 12
+var CLIP_SIZE = 6
 var AMMO = CLIP_SIZE
 var TOTAL_AMMO = 100
 var is_reloading = false

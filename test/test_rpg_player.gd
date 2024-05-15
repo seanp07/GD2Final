@@ -51,8 +51,8 @@ var dink_sound = preload("res://sounds/hitHead.wav")
 
 var unaim_pos = Vector3(0.319, -0.292, -0.753)
 var aim_pos = Vector3(0, -0.4, -0.4)
-var unaim_quat = euler_degrees_to_quat(Vector3(0, 180, 0))
-var aim_quat = euler_degrees_to_quat(Vector3(0, 180, 0))
+var unaim_quat = euler_degrees_to_quat(Vector3(0, 0, 0))
+var aim_quat = euler_degrees_to_quat(Vector3(0, 0, 0))
 var target_pos = unaim_pos
 var target_quat = unaim_quat
 
