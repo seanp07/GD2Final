@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://tmk0fp5xst7m"]
 
 [ext_resource type="PackedScene" uid="uid://bihvkmby3h3g2" path="res://flag.tscn" id="1_nf6bf"]
-[ext_resource type="PackedScene" uid="uid://cmnd61gdptmql" path="res://fps_playerbasic.tscn" id="1_xrrn0"]
 [ext_resource type="PackedScene" uid="uid://djcvpksnr5iut" path="res://fps_enemy_template.tscn" id="2_vemrg"]
 [ext_resource type="PackedScene" uid="uid://bfnvq6hle7q4s" path="res://finish.tscn" id="2_y0pj8"]
+[ext_resource type="PackedScene" uid="uid://b0ah1we3o3lx8" path="res://player versions/player_pistol.tscn" id="4_5kx2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0eiro"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -51,14 +51,8 @@ use_collision = true
 size = Vector3(7.8, 0.238, 13.009)
 material = SubResource("StandardMaterial3D_4mrwe")
 
-[node name="fwc7" type="CSGBox3D" parent="room2"]
-transform = Transform3D(1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 4.98295e-05, -6.59982, -4.52933)
-use_collision = true
-size = Vector3(3.9, 0.238, 13.4727)
-material = SubResource("StandardMaterial3D_4mrwe")
-
 [node name="fwc8" type="CSGBox3D" parent="room2"]
-transform = Transform3D(1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 4.97103e-05, -8.84163, 3.45719)
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 4.97103e-05, -8.84163, 2.91704)
 use_collision = true
 size = Vector3(3.9, 0.238, 9.573)
 material = SubResource("StandardMaterial3D_4mrwe")
@@ -159,9 +153,9 @@ size = Vector3(3.9, 0.238, 14.0668)
 material = SubResource("StandardMaterial3D_4mrwe")
 
 [node name="fwc5" type="CSGBox3D" parent="hallway1"]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 2.049, 1.84166, 6.72419)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0681762, 1.84166, 6.72419)
 use_collision = true
-size = Vector3(3.9, 0.238, 13.009)
+size = Vector3(3.9, 0.238, 5.80527)
 material = SubResource("StandardMaterial3D_4mrwe")
 
 [node name="hallway2" type="CSGCombiner3D" parent="."]
@@ -230,9 +224,6 @@ use_collision = true
 size = Vector3(1.9498, 1.13472, 0.474416)
 material = SubResource("StandardMaterial3D_tiauy")
 
-[node name="fps_player" parent="." instance=ExtResource("1_xrrn0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.983784, 0.922837, 1.97138)
-
 [node name="fps_enemy" parent="." instance=ExtResource("2_vemrg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.42935, 0.88586, -11.0242)
 
@@ -241,3 +232,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.546
 
 [node name="fps_enemy3" parent="." instance=ExtResource("2_vemrg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36.7616, 0.88586, -15.7967)
+
+[node name="test_player2" parent="." instance=ExtResource("4_5kx2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994472, 1.02566, 1.96699)
