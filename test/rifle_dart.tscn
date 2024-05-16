@@ -15,7 +15,7 @@ script = ExtResource("1_ox3vo")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 radius = 0.02
-height = 0.095
+height = 0.122544
 sides = 16
 material = SubResource("StandardMaterial3D_70v0p")
 

@@ -36,7 +36,7 @@ current = true
 near = 0.25
 
 [node name="test_weapon2" parent="Head/Camera3D" instance=ExtResource("2_i0uxj")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 0.318886, -0.291685, -0.752796)
+transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 0.265337, -0.420919, -0.57517)
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3

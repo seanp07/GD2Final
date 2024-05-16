@@ -27,7 +27,7 @@ var damage_shader = preload("res://take_damage.tres")
 var blaster 
 var muzzle
 var old_blaster_y
-var dart_scene = preload("res://fps_dart.tscn")
+var dart_scene = preload("res://shotgun_shell.tscn")
 
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.01
