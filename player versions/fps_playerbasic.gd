@@ -35,7 +35,7 @@ var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.03
 var SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
 var FIRING_DELAY = 0.075
-var ATTACK = 5.0
+var ATTACK = 6.0
 var NORMAL_HEIGHT = 2.0
 var NORMAL_COLLISION_RAD = 0.5
 var CROUCH_COLLISION_RAD = 0.8
@@ -221,6 +221,6 @@ func _unhandled_input(event):
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-75), deg_to_rad(75))
 	
 func _on_timer_timeout():
-		OS.alert("You ran out of time!")
-		get_tree().reload_current_scene()
+	OS.alert("You ran out of time!")
+	get_tree().reload_current_scene()
 

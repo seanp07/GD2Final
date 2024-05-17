@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt0vx4hud68cf"]
+[gd_scene load_steps=9 format=3 uid="uid://bt0vx4hud68cf"]
 
-[ext_resource type="Script" path="res://test/test_player3.gd" id="1_80vno"]
-[ext_resource type="PackedScene" uid="uid://cdvgyirc37x6g" path="res://test/test_weapon2.tscn" id="2_i0uxj"]
+[ext_resource type="Script" path="res://player versions/player_rifle.gd" id="1_ugmkg"]
+[ext_resource type="PackedScene" uid="uid://cdvgyirc37x6g" path="res://test/test_weapon2.tscn" id="2_lq882"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_itk8h"]
 
@@ -19,8 +19,11 @@ font_color = Color(0.533333, 0.0313726, 0.0313726, 1)
 font_size = 24
 font_color = Color(0.54902, 0.482353, 0.168627, 1)
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
-script = ExtResource("1_80vno")
+[sub_resource type="LabelSettings" id="LabelSettings_6yddx"]
+font_size = 20
+
+[node name="player_rifle" type="CharacterBody3D" groups=["Player", "player"]]
+script = ExtResource("1_ugmkg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_itk8h")
@@ -35,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 current = true
 near = 0.25
 
-[node name="test_weapon2" parent="Head/Camera3D" instance=ExtResource("2_i0uxj")]
+[node name="test_weapon2" parent="Head/Camera3D" instance=ExtResource("2_lq882")]
 transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 0.265337, -0.420919, -0.57517)
 
 [node name="HUD" type="Control" parent="."]
@@ -96,4 +99,24 @@ text = "0/0
 "
 label_settings = SubResource("LabelSettings_t2uuf")
 
+[node name="time" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_right = 73.0
+offset_bottom = 37.0
+grow_horizontal = 2
+text = "Timer
+"
+label_settings = SubResource("LabelSettings_6yddx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 16.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

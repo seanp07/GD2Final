@@ -7,7 +7,7 @@ albedo_color = Color(0.717647, 0, 0, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_d47jv"]
 height = 0.095
-radius = 0.02
+radius = 0.0262538
 
 [node name="shotgun_shell" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
@@ -20,7 +20,7 @@ sides = 16
 material = SubResource("StandardMaterial3D_ui3wm")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 
 [node name="Area3D" type="Area3D" parent="."]
 
