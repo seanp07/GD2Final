@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://buah04ldw1r8m"]
 
 [ext_resource type="PackedScene" uid="uid://djcvpksnr5iut" path="res://fps_enemy_template.tscn" id="2_3qw5u"]
-[ext_resource type="PackedScene" uid="uid://bt0vx4hud68cf" path="res://test/test_player3.tscn" id="2_fqv17"]
+[ext_resource type="PackedScene" uid="uid://dpv3e4dy2mpb3" path="res://test/minigun_player.tscn" id="2_j4emj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sv6o3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -35,5 +35,5 @@ material = SubResource("StandardMaterial3D_lxl84")
 [node name="fps_enemy" parent="." instance=ExtResource("2_3qw5u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9049, 2.50152, 35.5049)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_fqv17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9397, 1.60027, 4.44908)
+[node name="minigun_player" parent="." instance=ExtResource("2_j4emj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.23779, 1.77403, 4.77014)
