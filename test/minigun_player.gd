@@ -15,6 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 1.5
 
 
 @onready var camera = $Head/Camera3D
+@onready var minigun = $Head/Camera3D/minigun
 var CAM_SENSITIVITY = 0.02
 const BOB_FREQ = 0
 const BOB_AMP = 0.1
@@ -27,21 +28,21 @@ var damage_shader = preload("res://take_damage.tres")
 var blaster 
 var muzzle
 var old_blaster_y
-var dart_scene = preload("res://fps_dart.tscn")
+var dart_scene = preload("res://test/mini_bullet.tscn")
 
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.01
 var SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
-var FIRING_DELAY = 0.1
-var ATTACK = 5.5
+var FIRING_DELAY = 0.07
+var ATTACK = 1
 var NORMAL_HEIGHT = 2.0
 var NORMAL_COLLISION_RAD = 0.5
 var CROUCH_COLLISION_RAD = 0.8
 var NORMAL_HEAD = 0.8
 
-var CLIP_SIZE = 6
+var CLIP_SIZE = 100
 var AMMO = CLIP_SIZE
-var TOTAL_AMMO = 100
+var TOTAL_AMMO = 0
 var is_reloading = false
 
 @onready var audio_player = $AudioStreamPlayer3D
@@ -51,8 +52,8 @@ var dink_sound = preload("res://sounds/hitHead.wav")
 
 var unaim_pos = Vector3(0.319, -0.292, -0.753)
 var aim_pos = Vector3(0, -0.4, -0.4)
-var unaim_quat = euler_degrees_to_quat(Vector3(0, 180, 0))
-var aim_quat = euler_degrees_to_quat(Vector3(0, 180, 0))
+var unaim_quat = euler_degrees_to_quat(Vector3(270, 0, 0))
+var aim_quat = euler_degrees_to_quat(Vector3(270, 0, 0))
 var target_pos = unaim_pos
 var target_quat = unaim_quat
 
@@ -114,6 +115,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("fire"):
 		do_fire()
+		minigun.rotate(Vector3(0.0, 0.0, 45.0).normalized(),  45.0)
 	spray_lock = max(spray_lock - delta, 0.0)
 	
 	if Input.is_action_just_pressed("reload") or(Input.is_action_just_pressed("fire") and AMMO ==0):
