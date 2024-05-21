@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://syqhlq6lv0dq"]
+[gd_scene load_steps=9 format=3 uid="uid://b3kbj5xoy5f42"]
 
-[ext_resource type="Script" path="res://test/test_rpg_player.gd" id="1_dmhkh"]
-[ext_resource type="PackedScene" uid="uid://16cp66brluwy" path="res://test/test_rpg.tscn" id="2_eq3sr"]
+[ext_resource type="Script" path="res://player versions/player_rpg.gd" id="1_rqq1x"]
+[ext_resource type="PackedScene" uid="uid://16cp66brluwy" path="res://test/test_rpg.tscn" id="2_us07v"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mo4gc"]
 
@@ -19,8 +19,11 @@ font_color = Color(0.533333, 0.0313726, 0.0313726, 1)
 font_size = 24
 font_color = Color(0.54902, 0.482353, 0.168627, 1)
 
-[node name="test_rpg_player" type="CharacterBody3D"]
-script = ExtResource("1_dmhkh")
+[sub_resource type="LabelSettings" id="LabelSettings_cvuek"]
+font_size = 20
+
+[node name="test_rpg_player" type="CharacterBody3D" groups=["Player", "player"]]
+script = ExtResource("1_rqq1x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_mo4gc")
@@ -35,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 current = true
 near = 0.25
 
-[node name="test_rpg" parent="Head/Camera3D" instance=ExtResource("2_eq3sr")]
+[node name="test_rpg" parent="Head/Camera3D" instance=ExtResource("2_us07v")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.401058, -0.296954, -0.7772)
 
 [node name="HUD" type="Control" parent="."]
@@ -96,4 +99,22 @@ text = "0/0
 "
 label_settings = SubResource("LabelSettings_ravkh")
 
+[node name="time" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_right = 73.0
+offset_bottom = 37.0
+grow_horizontal = 2
+text = "Timer
+"
+label_settings = SubResource("LabelSettings_cvuek")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 16.0
