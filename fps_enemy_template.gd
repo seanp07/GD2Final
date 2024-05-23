@@ -14,7 +14,7 @@ var MAX_HEALTH = 20
 var HEALTH = MAX_HEALTH
 
 @onready var muzzle = $blaster/muzzle
-var dart_scene = preload("res://fps_dart.tscn")
+var dart_scene = preload("res://enemydart.tscn")
 var spray_lock = 0.0
 var spray_amount = 0.08
 
