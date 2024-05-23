@@ -23,6 +23,7 @@ var t_bob = 0.0
 
 var damage_shader = preload("res://take_damage.tres")
 @onready var head = $Head
+@onready var cam = $Head/Camera3D/test_rpg/Camera3D
 
 var blaster 
 var muzzle
@@ -50,7 +51,7 @@ var hit_sound = preload("res://sounds/hitHurt.wav")
 var dink_sound = preload("res://sounds/hitHead.wav")
 
 var unaim_pos = Vector3(0.319, -0.292, -0.753)
-var aim_pos = Vector3(0, -0.4, -0.4)
+var aim_pos = Vector3()
 var unaim_quat = euler_degrees_to_quat(Vector3(0, 0, 0))
 var aim_quat = euler_degrees_to_quat(Vector3(0, 0, 0))
 var target_pos = unaim_pos
