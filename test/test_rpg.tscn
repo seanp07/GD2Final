@@ -42,6 +42,6 @@ mesh = SubResource("TorusMesh_vhkim")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGMesh3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.11022e-16, 0, 0, 1, 0, 0, 0)
-radius = 0.005
+radius = 0.004
 height = 0.001
 material = SubResource("StandardMaterial3D_42wch")

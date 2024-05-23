@@ -51,7 +51,7 @@ var hit_sound = preload("res://sounds/hitHurt.wav")
 var dink_sound = preload("res://sounds/hitHead.wav")
 
 var unaim_pos = Vector3(0.319, -0.292, -0.753)
-var aim_pos = Vector3()
+var aim_pos = Vector3(0, -0.5, -0.4)
 var unaim_quat = euler_degrees_to_quat(Vector3(0, 0, 0))
 var aim_quat = euler_degrees_to_quat(Vector3(0, 0, 0))
 var target_pos = unaim_pos
@@ -139,9 +139,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("aim_sight"):
 		target_pos = aim_pos
 		target_quat = aim_quat
+		$HUD/crosshair.visible = false
 	elif Input.is_action_just_released("aim_sight"):
 		target_pos = unaim_pos
 		target_quat = unaim_quat
+		$HUD/crosshair.visible = true
 	blaster.position = blaster.position.lerp(target_pos, delta * 10)
 	var cur_quat = Quaternion.from_euler(degrees_to_radians(blaster.rotation_degrees))
 	blaster.rotation_degrees = radians_to_degrees(cur_quat.slerp(target_quat, delta * 10).get_euler())

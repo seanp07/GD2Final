@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://buah04ldw1r8m"]
+[gd_scene load_steps=8 format=3 uid="uid://buah04ldw1r8m"]
 
 [ext_resource type="Script" path="res://test/test_world.gd" id="1_6vv4i"]
 [ext_resource type="PackedScene" uid="uid://djcvpksnr5iut" path="res://fps_enemy_template.tscn" id="2_3qw5u"]
@@ -18,6 +18,8 @@ tonemap_mode = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxl84"]
 albedo_color = Color(0, 0, 0.278431, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uagja"]
+
 [node name="test_world" type="Node3D"]
 script = ExtResource("1_6vv4i")
 
@@ -35,3 +37,9 @@ material = SubResource("StandardMaterial3D_lxl84")
 
 [node name="fps_enemy" parent="." instance=ExtResource("2_3qw5u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9049, 2.50152, 35.5049)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.41957, 2.73818, -29.8988)
+use_collision = true
+size = Vector3(8.79204, 6.55179, 1)
+material = SubResource("StandardMaterial3D_uagja")
