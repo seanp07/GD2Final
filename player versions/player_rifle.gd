@@ -32,7 +32,7 @@ var dart_scene = preload("res://test/rifle_dart.tscn")
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.4
 var SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
-var FIRING_DELAY = 0.07
+var FIRING_DELAY = 0.06
 var ATTACK = 2
 var NORMAL_HEIGHT = 2.0
 var NORMAL_COLLISION_RAD = 0.5
@@ -57,7 +57,7 @@ var target_pos = unaim_pos
 var target_quat = unaim_quat
 
 var timer = Timer
-var time = 16
+var time = 26
 
 func degrees_to_radians(degrees: Vector3) -> Vector3:
 	return Vector3(
