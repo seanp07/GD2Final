@@ -140,6 +140,18 @@ use_collision = true
 size = Vector3(1.9498, 4.59395, 0.474416)
 material = SubResource("StandardMaterial3D_kxotr")
 
+[node name="barricade9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90133, 2.47117, -32.0725)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_kxotr")
+
+[node name="barricade11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0674138, 2.47117, -25.2556)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_kxotr")
+
 [node name="barricade4" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96419, 2.47117, -50.6696)
 use_collision = true
@@ -160,6 +172,12 @@ material = SubResource("StandardMaterial3D_kxotr")
 
 [node name="barricade8" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.733991, 2.47117, -66.6658)
+use_collision = true
+size = Vector3(1.32724, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_kxotr")
+
+[node name="barricade10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.733991, 2.47117, -15.4047)
 use_collision = true
 size = Vector3(1.32724, 4.59395, 0.474416)
 material = SubResource("StandardMaterial3D_kxotr")

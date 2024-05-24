@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://tmk0fp5xst7m"]
+[gd_scene load_steps=10 format=3 uid="uid://tmk0fp5xst7m"]
 
 [ext_resource type="PackedScene" uid="uid://bihvkmby3h3g2" path="res://flag.tscn" id="1_moq10"]
 [ext_resource type="PackedScene" uid="uid://bfnvq6hle7q4s" path="res://finish.tscn" id="2_bwaae"]
@@ -21,9 +21,6 @@ tonemap_mode = 2
 albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgpqp"]
-albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tiauy"]
 albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [node name="wr1" type="Node3D"]
@@ -198,12 +195,6 @@ use_collision = true
 size = Vector3(3.9, 0.238, 13.6136)
 material = SubResource("StandardMaterial3D_4mrwe")
 
-[node name="barricade2" type="CSGBox3D" parent="hallway2"]
-transform = Transform3D(-1, 4.37114e-08, 0, -4.37114e-08, -1, 4.37114e-08, 0, 4.37114e-08, 1, -1.01113, 0.653893, -0.475242)
-use_collision = true
-size = Vector3(1.9498, 1.13472, 0.474416)
-material = SubResource("StandardMaterial3D_tiauy")
-
 [node name="hallway3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.2465, -0.225, -15.174)
 use_collision = true
@@ -231,12 +222,6 @@ use_collision = true
 size = Vector3(3.9, 0.238, 13.009)
 material = SubResource("StandardMaterial3D_4mrwe")
 
-[node name="barricade3" type="CSGBox3D" parent="hallway3"]
-transform = Transform3D(-1, 4.37114e-08, 0, -4.37114e-08, -1, 4.37114e-08, 0, 4.37114e-08, 1, 1.00038, 0.653893, 6.25469)
-use_collision = true
-size = Vector3(1.9498, 1.13472, 0.474416)
-material = SubResource("StandardMaterial3D_tiauy")
-
 [node name="fps_enemy4" parent="." instance=ExtResource("3_g806m")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.42935, 0.88586, -19.7696)
 
@@ -245,6 +230,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.546
 
 [node name="fps_enemy3" parent="." instance=ExtResource("3_g806m")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36.7616, 0.88586, -15.7967)
+
+[node name="fps_enemy5" parent="." instance=ExtResource("3_g806m")]
+transform = Transform3D(-0.604599, 0, -0.79653, 0, 1, 0, 0.79653, 0, -0.604599, 42.0378, 0.88586, -12.8099)
 
 [node name="test_player2" parent="." instance=ExtResource("4_6npi5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0.380986)

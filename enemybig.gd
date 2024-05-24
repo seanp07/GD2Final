@@ -9,12 +9,11 @@ var SPEED = 3.0
 var ACCEL = 20
 var ATTACK = 10
 var knockback = 16.0
-
-var MAX_HEALTH = 20
+var MAX_HEALTH = 500
 var HEALTH = MAX_HEALTH
 
 @onready var muzzle = $blaster/muzzle
-var dart_scene = preload("res://enemydart.tscn")
+var dart_scene = preload("res://bigdart.tscn")
 var spray_lock = 0.0
 var spray_amount = 0.08
 
@@ -47,7 +46,7 @@ func _physics_process(delta):
 				var dart = dart_scene.instantiate()
 				add_child(dart)
 				dart.do_fire($Camera3D, muzzle, spray_amount, ATTACK)
-				spray_lock = 0.2
+				spray_lock = 0.4
 	spray_lock = max(spray_lock - delta, 0.0)
 	var dir = (nav_agent.target_position - global_position).normalized()
 	velocity = velocity.lerp(dir * SPEED, ACCEL * delta)
