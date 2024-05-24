@@ -2,8 +2,8 @@ extends Node3D
 
 
 var packed_scene = [
-	preload("res://test/minigun_player.tscn"),
-	#preload("res://player versions/player_rpg.tscn"),
+	#preload("res://test/minigun_player.tscn"),
+	preload("res://player versions/player_rpg.tscn"),
 	#preload("res://player versions/player_rifle.tscn"),
 	#preload("res://player versions/player_pistol.tscn"),
 	#preload("res://player versions/player_revolver.tscn")
@@ -21,3 +21,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+

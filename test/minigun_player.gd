@@ -9,6 +9,7 @@ var MAX_HEALTH = 100
 var HEALTH = MAX_HEALTH
 var damage_lock = 0.0  # Prevent infinite damage
 var inertia = Vector3()
+var heat_scale = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 1.5
@@ -50,7 +51,7 @@ var reload_sound = preload("res://sounds/recharge.mp3")
 var hit_sound = preload("res://sounds/hitHurt.wav")
 var dink_sound = preload("res://sounds/hitHead.wav")
 
-var unaim_pos = Vector3(0.351, -0.585, -1.686)
+var unaim_pos = Vector3(0.405, -0.78, -1.641)
 var aim_pos = Vector3(0, -0.4, -0.4)
 var unaim_quat = euler_degrees_to_quat(Vector3(90, 0, 180))
 var aim_quat = euler_degrees_to_quat(Vector3(270, 0, 0))
@@ -115,7 +116,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("fire"):
 		do_fire()
-		minigun.rotate(Vector3(0.0, 45.0, 0.0).normalized(), 45.0)
+		minigun.rotate(Vector3(0.0, 30.0, 0.0).normalized(), 30.0)
 	spray_lock = max(spray_lock - delta, 0.0)
 	
 	if Input.is_action_just_pressed("reload") or(Input.is_action_just_pressed("fire") and AMMO ==0):
@@ -218,7 +219,7 @@ func headbob(time):
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	blaster = $Head/Camera3D/minigun
-	muzzle = $Head/Camera3D/minigun/cylinders/CSGCylinder3D
+	muzzle = $Head/Camera3D/minigun/CSGCylinder3D/CSGCylinder3D
 	old_blaster_y = blaster.position.y
 
 func _unhandled_input(event):

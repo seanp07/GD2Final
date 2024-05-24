@@ -3,8 +3,8 @@ extends RigidBody3D
 var ATTACK = 10
 var ATTACK_CRIT = 2 * ATTACK
 var SPEED = 50
-var DROP = 2
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * DROP 
+var DROP = 0
+#var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * DROP 
 var spawn_origin: Vector3
 
 @onready var audio_player = $AudioStreamPlayer3D

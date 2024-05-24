@@ -15,11 +15,11 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cv858"]
 albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qf36e"]
-albedo_color = Color(1, 0.34902, 0, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cmin"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qf36e"]
+albedo_color = Color(1, 0.34902, 0, 1)
 
 [node name="minigun" type="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
@@ -47,57 +47,55 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.004
 size = Vector3(0.05, 0.05, 0.32)
 material = SubResource("StandardMaterial3D_cv858")
 
-[node name="cylinders" type="Node3D" parent="."]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+radius = 0.295
+height = 1.79931
+material = SubResource("StandardMaterial3D_0cmin")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="cylinders"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.524332, -0.234831)
 radius = 0.03
 height = 0.796
 material = SubResource("StandardMaterial3D_qf36e")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="cylinders"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180772, 0.524332, -0.125936)
 radius = 0.03
 height = 0.796
 material = SubResource("StandardMaterial3D_qf36e")
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="cylinders"]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219776, 0.524332, 0.0238895)
 radius = 0.03
 height = 0.796
 material = SubResource("StandardMaterial3D_qf36e")
 
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="cylinders"]
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155347, 0.524332, 0.193186)
 radius = 0.03
 height = 0.796
 material = SubResource("StandardMaterial3D_qf36e")
 
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="cylinders"]
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175134, 0.524332, 0.174187)
 radius = 0.03
 height = 0.796
 material = SubResource("StandardMaterial3D_qf36e")
 
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="cylinders"]
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00443304, 0.524332, 0.243994)
 radius = 0.03
 height = 0.796
 material = SubResource("StandardMaterial3D_qf36e")
 
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="cylinders"]
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234999, 0.524332, 0.0167454)
 radius = 0.03
 height = 0.796
 material = SubResource("StandardMaterial3D_qf36e")
 
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="cylinders"]
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175531, 0.524332, -0.142869)
 radius = 0.03
 height = 0.796
 material = SubResource("StandardMaterial3D_qf36e")
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-radius = 0.295
-height = 1.79931
-material = SubResource("StandardMaterial3D_0cmin")

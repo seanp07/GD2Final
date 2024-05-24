@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://16cp66brluwy"]
+[gd_scene load_steps=8 format=3 uid="uid://16cp66brluwy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtjfb"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0, 0.105882, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4bp3"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0, 0.141176, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahlqs"]
-albedo_color = Color(1, 0.376471, 0, 1)
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnx6u"]
 albedo_color = Color(0, 0, 0, 1)
@@ -20,19 +20,22 @@ outer_radius = 0.05
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42wch"]
 albedo_color = Color(1, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epa60"]
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="test_rpg" type="CSGBox3D"]
 size = Vector3(0.05, 0.05, 0.3)
 material = SubResource("StandardMaterial3D_dtjfb")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0421793, 0.0435116)
-radius = 0.011
-height = 0.044
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0421793, -0.0811064)
+radius = 0.014
+height = 0.084
 material = SubResource("StandardMaterial3D_o4bp3")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.153851)
-radius = 0.02
+radius = 0.034
 height = 0.01
 material = SubResource("StandardMaterial3D_ahlqs")
 
@@ -45,3 +48,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.11022e-16, 0, 0, 1, 0, 0, 0)
 radius = 0.004
 height = 0.001
 material = SubResource("StandardMaterial3D_42wch")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.00197611, 0.149192)
+radius = 0.033
+height = 0.013
+material = SubResource("StandardMaterial3D_epa60")

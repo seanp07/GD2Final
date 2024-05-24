@@ -2,9 +2,9 @@ extends RigidBody3D
 
 var ATTACK = 1
 var ATTACK_CRIT = 2 * ATTACK
-var SPEED = 100
+var SPEED = 30
 var DROP = 0
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * DROP 
+#var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * DROP 
 var spawn_origin: Vector3
 
 @onready var audio_player = $AudioStreamPlayer3D
@@ -20,7 +20,7 @@ func _on_timer_timeout():
 	queue_free()
 
 func _physics_process(delta):
-	linear_velocity.y -= gravity * delta
+	linear_velocity.y -= 0#delta 
 	do_damage("Player")
 	do_damage("Enemy")
 	

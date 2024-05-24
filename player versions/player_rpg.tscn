@@ -39,7 +39,7 @@ current = true
 near = 0.25
 
 [node name="test_rpg" parent="Head/Camera3D" instance=ExtResource("2_us07v")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.401058, -0.0581754, -0.7772)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.399369, -0.134549, -0.626255)
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3

@@ -36,7 +36,10 @@ size = Vector3(102.668, 1, 77.6961)
 material = SubResource("StandardMaterial3D_lxl84")
 
 [node name="fps_enemy" parent="." instance=ExtResource("2_3qw5u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9049, 2.50152, 35.5049)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9049, 1.46667, 35.5049)
+
+[node name="fps_enemy2" parent="." instance=ExtResource("2_3qw5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.1079, 1.46667, -32.1812)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.41957, 2.73818, -29.8988)

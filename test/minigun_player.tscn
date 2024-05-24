@@ -36,7 +36,7 @@ current = true
 near = 0.25
 
 [node name="minigun" parent="Head/Camera3D" instance=ExtResource("1_ryvc5")]
-transform = Transform3D(-0.7, 6.02662e-08, 1.06266e-08, 0, 0.121554, -0.689365, -6.11959e-08, -0.689365, -0.121554, 0.351207, -0.780248, -1.68566)
+transform = Transform3D(-0.7, 6.02662e-08, 1.06266e-08, 0, 0.121554, -0.689365, -6.11959e-08, -0.689365, -0.121554, 0.404546, -0.780248, -1.6411)
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -62,10 +62,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_top = 32.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "+"
