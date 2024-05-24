@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://dp881hkhuf64n"]
+
+[ext_resource type="PackedScene" uid="uid://bfnvq6hle7q4s" path="res://finish.tscn" id="1_517yg"]
+[ext_resource type="PackedScene" uid="uid://cmnd61gdptmql" path="res://player versions/fps_playerbasic.tscn" id="2_fsbxv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvuaj"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_gpd88"]
+sky_material = SubResource("ProceduralSkyMaterial_rvuaj")
+
+[sub_resource type="Environment" id="Environment_kl57w"]
+background_mode = 2
+sky = SubResource("Sky_gpd88")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyeom"]
+albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fglq2"]
+albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="wr_4" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kl57w")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="hallway1" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914918, -0.22461, -2.86668)
+use_collision = true
+
+[node name="fwc" type="CSGBox3D" parent="hallway1"]
+use_collision = true
+size = Vector3(3.9, 0.238, 20.4411)
+material = SubResource("StandardMaterial3D_dyeom")
+
+[node name="fwc4" type="CSGBox3D" parent="hallway1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65742, 0)
+use_collision = true
+size = Vector3(3.9, 0.238, 14.0522)
+material = SubResource("StandardMaterial3D_dyeom")
+
+[node name="fwc2" type="CSGBox3D" parent="hallway1"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.03831, 1.84166, 0)
+use_collision = true
+size = Vector3(3.9, 0.238, 14.3194)
+material = SubResource("StandardMaterial3D_dyeom")
+
+[node name="fwc3" type="CSGBox3D" parent="hallway1"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.049, 1.84166, 0)
+use_collision = true
+size = Vector3(3.9, 0.238, 14.0668)
+material = SubResource("StandardMaterial3D_dyeom")
+
+[node name="fwc5" type="CSGBox3D" parent="hallway1"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0681762, 1.84166, 6.72419)
+use_collision = true
+size = Vector3(3.9, 0.238, 5.80527)
+material = SubResource("StandardMaterial3D_dyeom")
+
+[node name="finish" parent="hallway1" instance=ExtResource("1_517yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0729061, 1.51677, 6.47884)
+
+[node name="room3" type="CSGCombiner3D" parent="hallway1"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.561131, -0.219254, -24.6881)
+use_collision = true
+
+[node name="fwc5" type="CSGBox3D" parent="hallway1/room3"]
+use_collision = true
+size = Vector3(11.7, 0.238, 11.7)
+material = SubResource("StandardMaterial3D_fglq2")
+
+[node name="fwc8" type="CSGBox3D" parent="hallway1/room3"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -6.02698, 1.82687, 0.0798998)
+use_collision = true
+size = Vector3(3.9, 0.238, 12)
+material = SubResource("StandardMaterial3D_fglq2")
+
+[node name="fwc9" type="CSGBox3D" parent="hallway1/room3"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.04447, 1.82687, 0.0798998)
+use_collision = true
+size = Vector3(3.9, 0.238, 12)
+material = SubResource("StandardMaterial3D_fglq2")
+
+[node name="fwc10" type="CSGBox3D" parent="hallway1/room3"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.037945, 1.82687, -6.0546)
+use_collision = true
+size = Vector3(3.9, 0.238, 12)
+material = SubResource("StandardMaterial3D_fglq2")
+
+[node name="fwc6" type="CSGBox3D" parent="hallway1/room3"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -3.94246, 1.84166, 6.01074)
+use_collision = true
+size = Vector3(3.9, 0.238, 6.06361)
+material = SubResource("StandardMaterial3D_fglq2")
+
+[node name="fwc7" type="CSGBox3D" parent="hallway1/room3"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 3.9474, 1.84166, 6.01074)
+use_collision = true
+size = Vector3(3.9, 0.238, 6.94419)
+material = SubResource("StandardMaterial3D_fglq2")
+
+[node name="fwc12" type="CSGBox3D" parent="hallway1/room3"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.198937, 3.21111, 6.01074)
+use_collision = true
+size = Vector3(3.9, 0.238, 6.94419)
+material = SubResource("StandardMaterial3D_fglq2")
+
+[node name="fwc11" type="CSGBox3D" parent="hallway1/room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65045, 0)
+use_collision = true
+size = Vector3(11.7, 0.238, 11.7)
+material = SubResource("StandardMaterial3D_fglq2")
+
+[node name="fps_player" parent="." instance=ExtResource("2_fsbxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.678132, 1.24665, -2.58603)
