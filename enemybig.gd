@@ -9,7 +9,7 @@ var SPEED = 3.0
 var ACCEL = 20
 var ATTACK = 10
 var knockback = 16.0
-var MAX_HEALTH = 500
+var MAX_HEALTH = 20
 var HEALTH = MAX_HEALTH
 
 @onready var muzzle = $blaster/muzzle
