@@ -27,7 +27,7 @@ var damage_shader = preload("res://take_damage.tres")
 var blaster 
 var muzzle
 var old_blaster_y
-var dart_scene = preload("res://test/rifle_dart.tscn")
+var dart_scene = preload("res://test/mini_bullet.tscn")
 
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.03
@@ -50,9 +50,9 @@ var hit_sound = preload("res://sounds/hitHurt.wav")
 var dink_sound = preload("res://sounds/hitHead.wav")
 
 var unaim_pos = Vector3(0.219, -0.27, -0.421)
-var aim_pos = Vector3(0, -0.14, -0.511)
+var aim_pos = Vector3(0, 0, -0.4)
 var unaim_quat = euler_degrees_to_quat(Vector3(28.1, 31.7, 0))
-var aim_quat = euler_degrees_to_quat(Vector3(11.6, 0, 0))
+var aim_quat = euler_degrees_to_quat(Vector3(0, 0, 0))
 var target_pos = unaim_pos
 var target_quat = unaim_quat
 

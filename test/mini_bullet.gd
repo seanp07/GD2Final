@@ -3,8 +3,8 @@ extends RigidBody3D
 var ATTACK = 1
 var ATTACK_CRIT = 2 * ATTACK
 var SPEED = 30
-var DROP = 0
-#var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * DROP 
+var DROP = 0.01
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * DROP 
 var spawn_origin: Vector3
 
 @onready var audio_player = $AudioStreamPlayer3D
@@ -37,8 +37,8 @@ func do_fire(camera, muzzle, spray_amount, attack=ATTACK):
 	ATTACK = attack
 	ATTACK_CRIT = 2*ATTACK
 	var cam_forward = camera.global_transform.basis.z.normalized()
-	var rnd_x = randf_range(0, 0) * spray_amount
-	var rnd_y = randf_range(0, 0) * spray_amount
+	var rnd_x = randf_range(-1, 1) * spray_amount
+	var rnd_y = randf_range(-1, 1) * spray_amount
 	var spray_dir = cam_forward + camera.global_transform.basis.x * rnd_x + camera.global_transform.basis.y * rnd_y
 	self.global_transform.origin = muzzle.global_transform.origin 
 	self.linear_velocity = -spray_dir.normalized() * SPEED

@@ -32,7 +32,7 @@ var dart_scene = preload("res://test/rifle_dart.tscn")
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.4
 var SPRAY_AMOUNT = NORMAL_SPRAY_AMOUNT
-var FIRING_DELAY = 0.06
+var FIRING_DELAY = 0.08
 var ATTACK = 2
 var NORMAL_HEIGHT = 2.0
 var NORMAL_COLLISION_RAD = 0.5
@@ -140,9 +140,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("aim_sight"):
 		target_pos = aim_pos
 		target_quat = aim_quat
+		$HUD/crosshair.visible = false
 	elif Input.is_action_just_released("aim_sight"):
 		target_pos = unaim_pos
 		target_quat = unaim_quat
+		$HUD/crosshair.visible = true
 	blaster.position = blaster.position.lerp(target_pos, delta * 10)
 	var cur_quat = Quaternion.from_euler(degrees_to_radians(blaster.rotation_degrees))
 	blaster.rotation_degrees = radians_to_degrees(cur_quat.slerp(target_quat, delta * 10).get_euler())

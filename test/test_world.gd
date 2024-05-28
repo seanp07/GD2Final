@@ -3,8 +3,8 @@ extends Node3D
 
 var packed_scene = [
 	#preload("res://test/minigun_player.tscn"),
-	preload("res://player versions/player_rpg.tscn"),
-	#preload("res://player versions/player_rifle.tscn"),
+	#preload("res://player versions/player_rpg.tscn"),
+	preload("res://player versions/player_rifle.tscn"),
 	#preload("res://player versions/player_pistol.tscn"),
 	#preload("res://player versions/player_revolver.tscn")
 ]

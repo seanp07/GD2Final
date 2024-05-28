@@ -116,7 +116,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("fire"):
 		do_fire()
-		minigun.rotate(Vector3(0.0, 30.0, 0.0).normalized(), 30.0)
+		minigun.rotate(Vector3(0.0, 10.0, 0.0).normalized(), 30.0)
 	spray_lock = max(spray_lock - delta, 0.0)
 	
 	if Input.is_action_just_pressed("reload") or(Input.is_action_just_pressed("fire") and AMMO ==0):

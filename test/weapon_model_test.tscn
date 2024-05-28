@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://hs11pbxcqpyx"]
+[gd_scene load_steps=5 format=3 uid="uid://hs11pbxcqpyx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvn1s"]
 albedo_color = Color(0, 0, 0, 1)
@@ -8,6 +8,9 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwbsm"]
 albedo_color = Color(1, 0.431373, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjw5x"]
+albedo_color = Color(0.223529, 0.223529, 0.223529, 1)
 
 [node name="weapon_model_test" type="CSGBox3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.0102075, 0)
@@ -20,7 +23,25 @@ size = Vector3(0.01103, 0.0126189, 0.0326811)
 material = SubResource("StandardMaterial3D_whn25")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -0.000301708, 0.0209571, -0.0560473)
-radius = 0.003
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -0.000590586, 0.0221165, -0.0527236)
+radius = 0.005
 height = 0.003
 material = SubResource("StandardMaterial3D_xwbsm")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00646408, 0.0287134, 0.00864027)
+radius = 0.004
+height = 0.008
+material = SubResource("StandardMaterial3D_bjw5x")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00512427, 0.0287134, 0.00864027)
+radius = 0.004
+height = 0.008
+material = SubResource("StandardMaterial3D_bjw5x")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.000391083, 0.0310984, 0.0101059)
+radius = 0.001
+height = 0.008
+material = SubResource("StandardMaterial3D_bjw5x")
