@@ -57,7 +57,7 @@ var target_pos = unaim_pos
 var target_quat = unaim_quat
 
 var timer = Timer
-var time = 21
+var time = 31
 
 func degrees_to_radians(degrees: Vector3) -> Vector3:
 	return Vector3(

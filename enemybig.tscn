@@ -23,7 +23,6 @@ albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 
 [node name="fps_enemy" type="CharacterBody3D" groups=["Enemy"]]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_3hlss")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -52,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.781363, 0)
 shape = SubResource("SphereShape3D_tdmhl")
 
 [node name="blaster" type="CSGBox3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.291783, 0.139233, 0.555665)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.291783, 0.299443, 0.555665)
 size = Vector3(0.128687, 0.145801, 0.592851)
 material = SubResource("StandardMaterial3D_ld2ym")
 
