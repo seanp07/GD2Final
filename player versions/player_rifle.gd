@@ -134,6 +134,8 @@ func _physics_process(delta):
 			is_reloading = false
 	$HUD/lblhealth.text = str(int(HEALTH)) + "/" + str(MAX_HEALTH)
 	$HUD/lblammo.text = str(int(AMMO)) + "/" + str(TOTAL_AMMO)
+	if HEALTH > 100:
+		HEALTH -= HEALTH - 100
 	if damage_lock == 0.0:
 		$HUD/overlay.material = null
 	
