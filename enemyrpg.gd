@@ -7,13 +7,14 @@ extends CharacterBody3D
 
 var SPEED = 3.0
 var ACCEL = 20
-var ATTACK = 10
+var ATTACK = 20
 var knockback = 16.0
+
 var MAX_HEALTH = 20
 var HEALTH = MAX_HEALTH
 
-@onready var muzzle = $blaster/muzzle
-var dart_scene = preload("res://bigdart.tscn")
+@onready var muzzle = $muzzle
+var dart_scene = preload("res://test/rocket.tscn")
 var spray_lock = 0.0
 var spray_amount = 0.08
 
@@ -46,7 +47,7 @@ func _physics_process(delta):
 				var dart = dart_scene.instantiate()
 				add_child(dart)
 				dart.do_fire($Camera3D, muzzle, spray_amount, ATTACK)
-				spray_lock = 0.2
+				spray_lock = 0.8
 	spray_lock = max(spray_lock - delta, 0.0)
 	var dir = (nav_agent.target_position - global_position).normalized()
 	velocity = velocity.lerp(dir * SPEED, ACCEL * delta)

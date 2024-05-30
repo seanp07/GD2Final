@@ -64,8 +64,6 @@ func _physics_process(delta):
 	
 	if int(HEALTH) <= 0:
 		self.queue_free()
-		for entity in get_tree().get_nodes_in_group("Player"):
-			entity.HEALTH += 10
 
 
 func take_damage(dmg, override=false, headshot=false, spawn_origin=null):
