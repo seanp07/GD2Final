@@ -1,3 +1,95 @@
-[gd_scene format=3 uid="uid://dp8dyx7q1tk0q"]
+[gd_scene load_steps=10 format=3 uid="uid://dp8dyx7q1tk0q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpola"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1akbo"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hx7tc"]
+albedo_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwson"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15u0g"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_cf3jl"]
+material = SubResource("StandardMaterial3D_15u0g")
+inner_radius = 0.037
+outer_radius = 0.024
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko2ch"]
+albedo_color = Color(1, 0.392157, 0, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_mu6q5"]
+inner_radius = 0.023
+outer_radius = 0.013
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmsm4"]
+albedo_color = Color(0.258824, 0.258824, 0.258824, 1)
 
 [node name="P90" type="CSGBox3D"]
+size = Vector3(0.123094, 0.113399, 0.0361438)
+material = SubResource("StandardMaterial3D_wpola")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104401, 0.038271, 0)
+size = Vector3(0.205913, 0.038, 0.036)
+material = SubResource("StandardMaterial3D_1akbo")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0798956, -0.0156283, 0)
+size = Vector3(0.0322607, 0.077817, 0.036)
+material = SubResource("StandardMaterial3D_1akbo")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112349, -0.0259475, 0)
+size = Vector3(0.0828198, 0.0227606, 0.036)
+material = SubResource("StandardMaterial3D_1akbo")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.15138, 0.0789848, 0)
+size = Vector3(0.0152987, 0.0517889, 0.0165148)
+material = SubResource("StandardMaterial3D_hx7tc")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.866025, -0.5, 0, 0.5, -0.866025, 0, 0, 0, 1, 0.118499, 0.0605864, 0)
+size = Vector3(0.0152987, 0.0517889, 0.0165148)
+material = SubResource("StandardMaterial3D_hx7tc")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0.183317, 0.0605864, 0)
+size = Vector3(0.0152987, 0.0517889, 0.0165148)
+material = SubResource("StandardMaterial3D_hx7tc")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.142587, 0.00383685, 0)
+size = Vector3(0.0828198, 0.0227606, 0.036)
+material = SubResource("StandardMaterial3D_xwson")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.105849, -0.00252045, 0)
+mesh = SubResource("TorusMesh_cf3jl")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.212165, 0.0384297, 0)
+radius = 0.005
+height = 0.014
+material = SubResource("StandardMaterial3D_ko2ch")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.161045, 0.00523357, 0)
+mesh = SubResource("TorusMesh_mu6q5")
+material = SubResource("StandardMaterial3D_gmsm4")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18254, 0, 0)
+size = Vector3(0.0137643, 0.0422719, 0.036)
+material = SubResource("StandardMaterial3D_gmsm4")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.167428, -0.0164223, 0)
+size = Vector3(0.0137643, 0.0422719, 0.036)
+material = SubResource("StandardMaterial3D_gmsm4")
