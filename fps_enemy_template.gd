@@ -64,6 +64,7 @@ func _physics_process(delta):
 	
 	if int(HEALTH) <= 0:
 		self.queue_free()
+		
 
 
 func take_damage(dmg, override=false, headshot=false, spawn_origin=null):
