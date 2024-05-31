@@ -227,6 +227,10 @@ func _unhandled_input(event):
 		self.rotate_y(-event.relative.x * (CAM_SENSITIVITY / 10.0))
 		camera.rotate_x(-event.relative.y * (CAM_SENSITIVITY / 10.0))
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-75), deg_to_rad(75))
+	
+func _heal():
+	HEALTH += 20
+	if HEALTH > 100: HEALTH = 100
 
 
 

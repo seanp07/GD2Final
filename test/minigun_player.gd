@@ -29,7 +29,7 @@ var damage_shader = preload("res://take_damage.tres")
 var blaster 
 var muzzle
 var old_blaster_y
-var dart_scene = preload("res://test/mini_bullet.tscn")
+var dart_scene = preload("res://test/rifle_dart.tscn")
 
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.01
@@ -115,6 +115,7 @@ func _physics_process(delta):
 	inertia = inertia.move_toward(Vector3(), delta * 1000.0)
 	
 	if Input.is_action_pressed("fire"):
+		Engine.max_fps = 60
 		do_fire()
 		minigun.rotate(Vector3(0.0, 10.0, 0.0).normalized(), 30.0)
 	spray_lock = max(spray_lock - delta, 0.0)

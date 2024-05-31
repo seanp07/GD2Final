@@ -18,8 +18,8 @@ func _ready():
 	add_child(scene)
 	scene.position = Vector3(0, 2, 0)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
 

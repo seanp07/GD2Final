@@ -22,7 +22,7 @@ font_color = Color(0.54902, 0.482353, 0.168627, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_j3ip7"]
 font_size = 20
 
-[node name="p90_player" type="CharacterBody3D"]
+[node name="p90_player" type="CharacterBody3D" groups=["Player", "player"]]
 script = ExtResource("1_0q2t4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
