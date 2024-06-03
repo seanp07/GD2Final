@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ditqk7k6cqvtg"]
+[gd_scene load_steps=11 format=3 uid="uid://ditqk7k6cqvtg"]
 
 [ext_resource type="PackedScene" uid="uid://bfnvq6hle7q4s" path="res://finish.tscn" id="1_fcm4b"]
 [ext_resource type="PackedScene" uid="uid://drfmh1aealxgw" path="res://player versions/player_revolver.tscn" id="2_l5h1l"]
 [ext_resource type="PackedScene" uid="uid://bihvkmby3h3g2" path="res://flag.tscn" id="3_8dx4j"]
 [ext_resource type="PackedScene" uid="uid://djcvpksnr5iut" path="res://fps_enemy_template.tscn" id="4_i8r3m"]
+[ext_resource type="PackedScene" uid="uid://dxl0issd3kd52" path="res://enemybig.tscn" id="5_daljy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_coyda"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -185,7 +186,7 @@ use_collision = true
 
 [node name="fwc5" type="CSGBox3D" parent="room3"]
 use_collision = true
-size = Vector3(11.7, 0.238, 11.7)
+size = Vector3(16.6681, 0.238, 13.2034)
 material = SubResource("StandardMaterial3D_tf1t5")
 
 [node name="fwc8" type="CSGBox3D" parent="room3"]
@@ -233,8 +234,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.462
 [node name="fps_enemy3" parent="." instance=ExtResource("4_i8r3m")]
 transform = Transform3D(-0.907777, 0, -0.419452, 0, 1, 0, 0.419452, 0, -0.907777, 17.3448, 0.919291, -21.0788)
 
-[node name="fps_enemy2" parent="." instance=ExtResource("4_i8r3m")]
-transform = Transform3D(0.350207, 0, -0.936672, 0, 1, 0, 0.936672, 0, 0.350207, 2.38804, 0.919291, -25.7753)
+[node name="fps_enemy4" parent="." instance=ExtResource("5_daljy")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 18.0496, 1.05705, 10.1849)
 
-[node name="fps_enemy5" parent="." instance=ExtResource("4_i8r3m")]
-transform = Transform3D(-0.999815, 0, 0.0191973, 0, 1, 0, -0.0191973, 0, -0.999815, 16.2808, 0.919291, 13.0848)
+[node name="fps_enemy2" parent="." instance=ExtResource("5_daljy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56086, 0.982086, -25.3887)
