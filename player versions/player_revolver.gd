@@ -46,7 +46,7 @@ var is_reloading = false
 
 @onready var audio_player = $AudioStreamPlayer3D
 var reload_sound = preload("res://sounds/recharge.mp3")
-var hit_sound = preload("res://sounds/hitHurt.wav")
+var hit_sound = preload("res://sounds/pistol.wav")
 var dink_sound = preload("res://sounds/hitHead.wav")
 
 var unaim_pos = Vector3(0.319, -0.292, -0.753)
@@ -124,8 +124,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("reload") or(Input.is_action_just_pressed("fire") and AMMO ==0):
 		if TOTAL_AMMO > 0 and not is_reloading and AMMO != CLIP_SIZE:
 			is_reloading = true
-			audio_player.stream = reload_sound
-			audio_player.play()
+			#audio_player.stream = reload_sound
+			#audio_player.play()
 			await get_tree().create_timer(2).timeout
 			var ammo_needed = CLIP_SIZE - AMMO
 			var new_ammo = min(ammo_needed, TOTAL_AMMO)
@@ -192,10 +192,12 @@ func take_damage(dmg, override=false, headshot=false, _spawn_origin=null):
 		$HUD/overlay.material.set_shader_parameter("intensity", dmg_intensity)
 		if audio_player.playing:
 			await audio_player.finished
-	audio_player.stream = dink_sound if headshot else hit_sound
-	audio_player.play()
+	#audio_player.stream = dink_sound if headshot else hit_sound
+	#audio_player.play()
 
 func do_fire():
+	audio_player.play()
+	audio_player.volume_db =-3
 	if spray_lock == 0.0 and AMMO > 0:
 		var dart = dart_scene.instantiate()
 		add_child(dart)

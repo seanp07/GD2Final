@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpv3e4dy2mpb3"]
+[gd_scene load_steps=9 format=3 uid="uid://dpv3e4dy2mpb3"]
 
 [ext_resource type="Script" path="res://test/minigun_player.gd" id="1_1ieja"]
 [ext_resource type="PackedScene" uid="uid://ggrlj1mkuv8r" path="res://test/minigun.tscn" id="1_ryvc5"]
+[ext_resource type="AudioStream" uid="uid://b6anwsgy43tqw" path="res://sounds/lmg_fire01.mp3" id="3_6y1kp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f6nto"]
 
@@ -101,3 +102,4 @@ text = "0/0
 label_settings = SubResource("LabelSettings_1vu0u")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_6y1kp")
