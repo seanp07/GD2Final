@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3kbj5xoy5f42"]
+[gd_scene load_steps=10 format=3 uid="uid://b3kbj5xoy5f42"]
 
 [ext_resource type="Script" path="res://player versions/player_rpg.gd" id="1_rqq1x"]
 [ext_resource type="PackedScene" uid="uid://16cp66brluwy" path="res://test/test_rpg.tscn" id="2_us07v"]
+[ext_resource type="AudioStream" uid="uid://b1dyu48bwgnss" path="res://sounds/explode.wav" id="3_7bryj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mo4gc"]
 
@@ -115,6 +116,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_7bryj")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 25.0

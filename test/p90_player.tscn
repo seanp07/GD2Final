@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://s6muw2ossxw5"]
+[gd_scene load_steps=10 format=3 uid="uid://s6muw2ossxw5"]
 
 [ext_resource type="Script" path="res://test/p90_player.gd" id="1_0q2t4"]
 [ext_resource type="PackedScene" uid="uid://dp8dyx7q1tk0q" path="res://test/P90.tscn" id="2_rkupf"]
+[ext_resource type="AudioStream" uid="uid://ch2eybko8b5fk" path="res://sounds/Futuristic SMG Single Shot.wav" id="3_bovq3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_m3fj7"]
 
@@ -119,6 +120,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_bovq3")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0

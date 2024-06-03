@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://drfmh1aealxgw"]
+[gd_scene load_steps=10 format=3 uid="uid://drfmh1aealxgw"]
 
 [ext_resource type="Script" path="res://player versions/player_revolver.gd" id="1_v75kb"]
 [ext_resource type="PackedScene" uid="uid://cwum3r0utuv05" path="res://test/test_weapon3.tscn" id="2_d4oi5"]
+[ext_resource type="AudioStream" uid="uid://csr26dntsc8va" path="res://sounds/pistol.wav" id="3_htv0g"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pj3w1"]
 
@@ -115,6 +116,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_htv0g")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 16.0
