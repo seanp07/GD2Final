@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://dp881hkhuf64n"]
 
 [ext_resource type="PackedScene" uid="uid://bfnvq6hle7q4s" path="res://finish.tscn" id="1_vownk"]
-[ext_resource type="PackedScene" uid="uid://bt0vx4hud68cf" path="res://player versions/player_rifle.tscn" id="2_j7x0m"]
 [ext_resource type="PackedScene" uid="uid://dxl0issd3kd52" path="res://enemybig.tscn" id="3_ohh7e"]
 [ext_resource type="PackedScene" uid="uid://bihvkmby3h3g2" path="res://flag.tscn" id="4_cmcvg"]
+[ext_resource type="PackedScene" uid="uid://s6muw2ossxw5" path="res://test/p90_player.tscn" id="5_117rv"]
 [ext_resource type="PackedScene" uid="uid://i726evkvey80" path="res://enemyrpg.tscn" id="5_qn1bk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvuaj"]
@@ -227,9 +227,6 @@ material = SubResource("StandardMaterial3D_dyeom")
 [node name="finish" parent="hallway1" instance=ExtResource("1_vownk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0729061, 1.51677, 6.47884)
 
-[node name="player_rifle" parent="." instance=ExtResource("2_j7x0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353787, 1.41782, -4.45805)
-
 [node name="fps_enemy6" parent="." instance=ExtResource("3_ohh7e")]
 transform = Transform3D(-0.998909, 0, -0.0467056, 0, 1, 0, 0.0467056, 0, -0.998909, -3.35503, 1.03874, -19.8709)
 
@@ -280,3 +277,6 @@ transform = Transform3D(0.267238, 0, -0.96363, 0, 1, 0, 0.96363, 0, 0.267238, 6.
 
 [node name="fps_enemy15" parent="." instance=ExtResource("5_qn1bk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.07449, 5.45934, -30.8094)
+
+[node name="p90_player" parent="." instance=ExtResource("5_117rv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.707582, 1.27169, -4.50436)

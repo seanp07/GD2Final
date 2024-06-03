@@ -29,7 +29,7 @@ var damage_shader = preload("res://take_damage.tres")
 var blaster 
 var muzzle
 var old_blaster_y
-var dart_scene = preload("res://test/rifle_dart.tscn")
+var dart_scene = preload("res://test/mg_dart.tscn")
 
 var spray_lock = 0.0
 var NORMAL_SPRAY_AMOUNT = 0.01
@@ -43,7 +43,7 @@ var NORMAL_HEAD = 0.8
 
 var CLIP_SIZE = 250
 var AMMO = CLIP_SIZE
-var TOTAL_AMMO = 0
+var TOTAL_AMMO = 1250
 var is_reloading = false
 
 @onready var audio_player = $AudioStreamPlayer3D
