@@ -18,7 +18,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 1.5
 @onready var camera = $Head/Camera3D
 @onready var minigun = $Head/Camera3D/minigun/CSGCylinder3D
 var CAM_SENSITIVITY = 0.02
-const BOB_FREQ = 0
+const BOB_FREQ = 1.6
 const BOB_AMP = 0.1
 var t_bob = 0.0
 
@@ -58,6 +58,9 @@ var aim_quat = euler_degrees_to_quat(Vector3(270, 0, 0))
 var target_pos = unaim_pos
 var target_quat = unaim_quat
 
+var timer = Timer
+var time = 16
+
 func degrees_to_radians(degrees: Vector3) -> Vector3:
 	return Vector3(
 		deg_to_rad(degrees.x),
@@ -81,7 +84,8 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
+	$HUD/time.text =  str(int(time))
+	time = max(time-delta, 0.0)
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY * 1.05
@@ -229,3 +233,9 @@ func _unhandled_input(event):
 		self.rotate_y(-event.relative.x * (CAM_SENSITIVITY / 10.0))
 		camera.rotate_x(-event.relative.y * (CAM_SENSITIVITY / 10.0))
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-75), deg_to_rad(75))
+
+
+func _on_timer_timeout():
+	OS.alert("You ran out of time!")
+	get_tree().reload_current_scene()
+

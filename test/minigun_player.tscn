@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpv3e4dy2mpb3"]
+[gd_scene load_steps=10 format=3 uid="uid://dpv3e4dy2mpb3"]
 
 [ext_resource type="Script" path="res://test/minigun_player.gd" id="1_1ieja"]
 [ext_resource type="PackedScene" uid="uid://ggrlj1mkuv8r" path="res://test/minigun.tscn" id="1_ryvc5"]
@@ -19,6 +19,9 @@ font_color = Color(0.533333, 0.0313726, 0.0313726, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_1vu0u"]
 font_size = 24
 font_color = Color(0.54902, 0.482353, 0.168627, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ew2nw"]
+font_size = 20
 
 [node name="minigun_player" type="CharacterBody3D" groups=["Player", "player"]]
 script = ExtResource("1_1ieja")
@@ -101,5 +104,25 @@ text = "0/0
 "
 label_settings = SubResource("LabelSettings_1vu0u")
 
+[node name="time" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_right = 73.0
+offset_bottom = 37.0
+grow_horizontal = 2
+text = "Timer
+"
+label_settings = SubResource("LabelSettings_ew2nw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_6y1kp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
