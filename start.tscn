@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://d211jm2va3gsy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u8h7d"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_vd5ff"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_rn0dd"]
+font_size = 24
+
+[sub_resource type="Theme" id="Theme_m566u"]
+default_font_size = 48
+
+[node name="start" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 384.0
+offset_right = 764.0
+offset_bottom = 64.0
+grow_horizontal = 2
+text = "CAPTURE THE FLAG"
+label_settings = SubResource("LabelSettings_u8h7d")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 384.0
+offset_top = 344.0
+offset_right = 768.0
+offset_bottom = 488.0
+grow_horizontal = 2
+text = "GOAL:
+MOVE TO THE GOLDEN CIRCLE
+RETURN TO START
+"
+label_settings = SubResource("LabelSettings_vd5ff")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 384.0
+offset_top = 144.0
+offset_right = 776.0
+offset_bottom = 344.0
+grow_horizontal = 2
+text = "CONTROLS:
+STANDARD WASD
+LEFT CLICK - SHOOT
+RIGHT CLICK - IRON SIGHTS
+R - RELOAD"
+label_settings = SubResource("LabelSettings_rn0dd")
+horizontal_alignment = 1
+
+[node name="btn" type="Button" parent="."]
+layout_mode = 0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme = SubResource("Theme_m566u")
+text = "START"

@@ -39,9 +39,9 @@ var NORMAL_COLLISION_RAD = 0.5
 var CROUCH_COLLISION_RAD = 0.8
 var NORMAL_HEAD = 0.8
 
-var CLIP_SIZE = 40
+var CLIP_SIZE = 50
 var AMMO = CLIP_SIZE
-var TOTAL_AMMO = 300
+var TOTAL_AMMO = 500
 var is_reloading = false
 
 @onready var audio_player = $AudioStreamPlayer3D
@@ -165,13 +165,6 @@ func _physics_process(delta):
 			# get_tree().change_scene_to_file("res://fps_world3.tscn")
 		# else:
 			# get_tree().change_scene_to_file("res://fps_world2.tscn")
-	if int(HEALTH) <= 0:
-		HEALTH = 0
-		await get_tree().create_timer(0.25).timeout
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		OS.alert("You died!")
-		get_tree().reload_current_scene()
-	
 	# Right Joystick
 	var joystick_index = 0
 	var deadzone = 0.1

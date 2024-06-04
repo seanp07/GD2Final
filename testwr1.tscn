@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhvqsufk62hkv"]
+[gd_scene load_steps=12 format=3 uid="uid://dhvqsufk62hkv"]
 
+[ext_resource type="PackedScene" uid="uid://dpv3e4dy2mpb3" path="res://test/minigun_player.tscn" id="2_6k2h6"]
 [ext_resource type="PackedScene" uid="uid://djcvpksnr5iut" path="res://fps_enemy_template.tscn" id="2_ujrni"]
-[ext_resource type="PackedScene" uid="uid://cmnd61gdptmql" path="res://player versions/fps_playerbasic.tscn" id="2_xy0ri"]
+[ext_resource type="PackedScene" uid="uid://bihvkmby3h3g2" path="res://flag.tscn" id="3_x11r5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nruue"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -15,15 +16,21 @@ background_mode = 2
 sky = SubResource("Sky_qwo31")
 tonemap_mode = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4njn"]
-albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0of1"]
 albedo_color = Color(0.972549, 0.972549, 0.729412, 1)
 emission = Color(0.972549, 0.972549, 0.729412, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4njn"]
+albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_figk2"]
 albedo_color = Color(0, 0.278431, 0.670588, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okcd7"]
+albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbivt"]
+albedo_color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [node name="testwr1" type="Node3D"]
 
@@ -33,18 +40,6 @@ environment = SubResource("Environment_k28ro")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
-
-[node name="barricade" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.454092, -2.86668)
-use_collision = true
-size = Vector3(1.9498, 1.13472, 0.474416)
-material = SubResource("StandardMaterial3D_c4njn")
-
-[node name="barricade2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86063, 0.454092, -21.9653)
-use_collision = true
-size = Vector3(1.9498, 1.13472, 0.474416)
-material = SubResource("StandardMaterial3D_c4njn")
 
 [node name="finish" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.908653, 1.68562, 16.6864)
@@ -238,5 +233,122 @@ material = SubResource("StandardMaterial3D_c4njn")
 [node name="fps_enemy" parent="." instance=ExtResource("2_ujrni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1587, 0, -0.00515556)
 
-[node name="fps_player" parent="." instance=ExtResource("2_xy0ri")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06089, 1.14745, 9.77339)
+[node name="minigun_player" parent="." instance=ExtResource("2_6k2h6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04611, 1.14633, 8.99973)
+
+[node name="barricade9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90133, 1.81107, -32.0725)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="barricade12" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7725, 1.81107, -39.4662)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="barricade11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1443, 1.81107, -43.1625)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="barricade2" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -6.98883, 0.400042, -64.5727)
+use_collision = true
+size = Vector3(4.55786, 1.13472, 0.474416)
+material = SubResource("StandardMaterial3D_vbivt")
+
+[node name="barricade3" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -19.0425, 0.400042, -40.829)
+use_collision = true
+size = Vector3(4.55786, 1.13472, 0.474416)
+material = SubResource("StandardMaterial3D_vbivt")
+
+[node name="barricade4" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 11.8379, 0.400042, -33.2619)
+use_collision = true
+size = Vector3(4.55786, 1.13472, 0.474416)
+material = SubResource("StandardMaterial3D_vbivt")
+
+[node name="barricade5" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 16.8757, 0.400042, -50.8893)
+use_collision = true
+size = Vector3(4.55786, 1.13472, 0.474416)
+material = SubResource("StandardMaterial3D_vbivt")
+
+[node name="barricade6" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -21.7374, 0.400042, -69.8015)
+use_collision = true
+size = Vector3(4.55786, 1.13472, 0.474416)
+material = SubResource("StandardMaterial3D_vbivt")
+
+[node name="barricade18" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98567, 1.81107, -71.7892)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="barricade16" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6622, 1.81107, -57.6522)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="barricade17" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46292, 1.81107, -66.0389)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="barricade14" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5261, 1.81107, -49.5103)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="barricade10" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.8968, 1.81107, -49.446)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="barricade15" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.6864, 1.81107, -59.315)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="barricade13" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.91395, 1.81107, -49.446)
+use_collision = true
+size = Vector3(1.9498, 4.59395, 0.474416)
+material = SubResource("StandardMaterial3D_okcd7")
+
+[node name="flag" parent="." instance=ExtResource("3_x11r5")]
+transform = Transform3D(7.54979e-08, -1.16824e-06, -1, -4.37114e-08, 6, -1.94707e-07, 1, 2.62268e-07, 7.54979e-08, -1.44665, 7.9723, -49.2813)
+
+[node name="fps_enemy2" parent="." instance=ExtResource("2_ujrni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8664, 1.02397, -41.8024)
+
+[node name="fps_enemy3" parent="." instance=ExtResource("2_ujrni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04071, 1.02397, -41.8024)
+
+[node name="fps_enemy4" parent="." instance=ExtResource("2_ujrni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66795, 1.02397, -41.8024)
+
+[node name="fps_enemy5" parent="." instance=ExtResource("2_ujrni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3123, 1.02397, -41.8024)
+
+[node name="fps_enemy6" parent="." instance=ExtResource("2_ujrni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91432, 1.02397, -41.8024)
+
+[node name="fps_enemy7" parent="." instance=ExtResource("2_ujrni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.36348, 1.02397, -41.8024)
+
+[node name="fps_enemy8" parent="." instance=ExtResource("2_ujrni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.87893, 1.02397, -41.8024)
+
+[node name="fps_enemy9" parent="." instance=ExtResource("2_ujrni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74781, 1.02397, -41.8024)
