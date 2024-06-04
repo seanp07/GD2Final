@@ -48,7 +48,7 @@ var is_reloading = false
 
 @onready var audio_player = $AudioStreamPlayer3D
 var reload_sound = preload("res://sounds/recharge.mp3")
-var hit_sound = preload("res://sounds/lmg_fire01.mp3")
+var hit_sound = preload("res://sounds/hitHurt.wav")
 var dink_sound = preload("res://sounds/hitHead.wav")
 
 var unaim_pos = Vector3(0.405, -0.78, -1.641)
@@ -155,12 +155,6 @@ func _physics_process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		OS.alert("You Died!")
 		get_tree().reload_current_scene()
-	
-	if len(get_tree().get_nodes_in_group("Enemy")) <= 0:
-		await get_tree().create_timer(0.25).timeout
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		OS.alert("You win!")
-		get_tree().quit()
 		
 		# if "fps_world2" in get_tree().current_scene.name:
 			# get_tree().change_scene_to_file("res://fps_world3.tscn")
