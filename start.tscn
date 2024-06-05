@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d211jm2va3gsy"]
+[gd_scene load_steps=6 format=3 uid="uid://d211jm2va3gsy"]
+
+[ext_resource type="Script" path="res://start.gd" id="1_t7rat"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u8h7d"]
 font_size = 32
@@ -14,10 +16,12 @@ default_font_size = 48
 
 [node name="start" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1152.0
 offset_bottom = -648.0
+script = ExtResource("1_t7rat")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -74,3 +78,5 @@ offset_right = 1152.0
 offset_bottom = 648.0
 theme = SubResource("Theme_m566u")
 text = "START"
+
+[connection signal="pressed" from="btn" to="." method="_on_btn_pressed"]
