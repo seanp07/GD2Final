@@ -9,7 +9,7 @@ func _on_body_entered(body):
 					get_tree().change_scene_to_file("res://worlds/wr_4.tscn")
 				elif "wr_4" in get_tree().current_scene.name:
 					get_tree().change_scene_to_file("res://worlds/wr_5.tscn")
-				elif "wr_1" in get_tree().current_scene.name:
+				elif "wr1" in get_tree().current_scene.name:
 					get_tree().change_scene_to_file("res://worlds/wr_2.tscn")
 				else:
 					OS.alert("You won!")
